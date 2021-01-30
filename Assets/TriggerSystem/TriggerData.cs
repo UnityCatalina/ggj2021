@@ -2,10 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "StoryTrigger")]
-public class TriggerData : ScriptableObject
+[System.Serializable]
+public class DialogLine
 {
-    public string m_cameraName;
-    public float m_timeStart;
-    public float m_timeEnd;
+    public CharacterData m_character;
+    [TextArea]
+    public string m_line;
+}
+
+[System.Serializable]
+public class TriggeredEvent
+{
+    public List<DialogLine> m_dialog;
+    public List<string> m_camerasToUnlock;
+}
+
+public class TriggerData : MonoBehaviour
+{
+    public TriggeredEvent m_onTrigger;
 }

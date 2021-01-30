@@ -51,7 +51,11 @@ public class TimeLord : MonoBehaviour
                 // this will call RebuildGraph if needed
                 director.Play();
                 // will set the speed of the graph to 0, so it's playing but never advancing
-                director.playableGraph.GetRootPlayable(0).SetSpeed(0);
+                int count = director.playableGraph.GetRootPlayableCount();
+                for (int i = 0; i < count; i++)
+                {
+                    director.playableGraph.GetRootPlayable(i).SetSpeed(0);
+                }
             }
 
             director.time = m_timeSeconds;

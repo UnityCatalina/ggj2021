@@ -61,7 +61,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -349,3 +349,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 6889129729589514823}
   pressClip: {fileID: 8300000, guid: 228c7e1d2553d8e4aad578d27a0c209f, type: 3}
+  mainCamControl: {fileID: 6889129728923168386}
