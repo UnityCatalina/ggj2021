@@ -28,6 +28,14 @@ public class TimeLord : MonoBehaviour
             s_instance.m_timeSeconds = timeSeconds;
         }
     }
+    public static float GetTime()
+    {
+        if (s_instance != null)
+        {
+            return s_instance.m_timeSeconds;
+        }
+        return Time.time;
+    }
     public static float GetSequenceLength()
     {
         return 60.0f * 4.0f;

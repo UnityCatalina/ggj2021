@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class DialogLine
 {
+    public CharacterData m_character;
     [TextArea]
     public string m_line;
 }

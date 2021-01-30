@@ -8,6 +8,7 @@ public class UI : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip pressClip;
     public MainCamControl mainCamControl;
+    public Transform debugTransform;
     Camera mainCam;
     ScreenControl[] screenControls;
 
@@ -31,13 +32,13 @@ public class UI : MonoBehaviour
         bigRt.Create();
     }
 
-    private Collider GetColliderAtMouse()
+    private RaycastHit? RaycastMouse()
     {
         var ray = mainCam.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hitInfo;
-        if (!Physics.Raycast(ray, out hitInfo))
+        RaycastHit hit;
+        if (!Physics.Raycast(ray, out hit))
             return null;
-        return hitInfo.collider;
+        return hit;
     }
 
     private void PlayPressSound()
@@ -65,43 +66,55 @@ public class UI : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    var collider = GetColliderAtMouse();
-                    if (collider != null)
-                        SetActiveScreen(collider.GetComponent<ScreenControl>());
+                    var maybeHit = RaycastMouse();
+                    if (maybeHit is RaycastHit hit)
+                        SetActiveScreen(hit.collider.GetComponent<ScreenControl>());
                 }
             }
             else if (Input.GetMouseButtonDown(0))
             {
-                var collider = GetColliderAtMouse();
-                if (collider == mainCamControl.activeScreen.forwardButton.pressCollider)
+                var maybeHit = RaycastMouse();
+                if (maybeHit is RaycastHit hit)
                 {
-                    playSpeed = (playSpeed == 1) ? 0 : 1;
-                    PlayPressSound();
-                }
-                else if (collider == mainCamControl.activeScreen.fastForwardButton.pressCollider)
-                {
-                    playSpeed = (playSpeed == 2) ? 0 : 2;
-                    PlayPressSound();
-                }
-                else if (collider == mainCamControl.activeScreen.reverseButton.pressCollider)
-                {
-                    playSpeed = (playSpeed == -1) ? 0 : -1;
-                    PlayPressSound();
-                }
-                else if (collider == mainCamControl.activeScreen.fastReverseButton.pressCollider)
-                {
-                    playSpeed = (playSpeed == -2) ? 0 : -2;
-                    PlayPressSound();
-                }
-                else if ((collider == mainCamControl.activeScreen.scrubber.dragCollider) ||
-                    (collider == mainCamControl.activeScreen.scrubber.scrubLineCollider))
-                {
-                    draggingScrubber = true;
-                }
-                else if (Array.Exists(mainCamControl.activeScreen.exitColliders,
-                    exitCollider => collider == exitCollider))
-                {
-                    SetActiveScreen(null);
+                    if (hit.collider == mainCamControl.activeScreen.forwardButton.pressCollider)
+                    {
+                        playSpeed = (playSpeed == 1) ? 0 : 1;
+                        PlayPressSound();
+                    }
+                    else if (hit.collider == mainCamControl.activeScreen.fastForwardButton.pressCollider)
+                    {
+                        playSpeed = (playSpeed == 2) ? 0 : 2;
+                        PlayPressSound();
+                    }
+                    else if (hit.collider == mainCamControl.activeScreen.reverseButton.pressCollider)
+                    {
+                        playSpeed = (playSpeed == -1) ? 0 : -1;
+                        PlayPressSound();
+                    }
+                    else if (hit.collider == mainCamControl.activeScreen.fastReverseButton.pressCollider)
+                    {
+                        playSpeed = (playSpeed == -2) ? 0 : -2;
+                        PlayPressSound();
+                    }
+                    else if ((hit.collider == mainCamControl.activeScreen.scrubber.dragCollider) ||
+                        (hit.collider == mainCamControl.activeScreen.scrubber.scrubLineCollider))
+                    {
+                        draggingScrubber = true;
+                    }
+                    else if (Array.Exists(mainCamControl.activeScreen.exitColliders,
+                        exitCollider => hit.collider == exitCollider))
+                    {
+                        SetActiveScreen(null);
+                    }
+                    else if (hit.collider == mainCamControl.activeScreen.screenCollider)
+                    {
+                        var maybeThroughHit = mainCamControl.activeScreen.RaycastThroughScreen(hit);
+                        if (maybeThroughHit is RaycastHit throughHit)
+                        {
+                            print(throughHit.collider);
+                            debugTransform.position = throughHit.point;
+                        }
+                    }
                 }
             }
             else if (Input.GetMouseButtonDown(1))
