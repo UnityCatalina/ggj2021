@@ -108,6 +108,6 @@ public class DialogueRunner : MonoBehaviour
         {
             return true;
         }
-        return s_instance.m_isRunning;
+        return !s_instance.m_isRunning;
     }
 }

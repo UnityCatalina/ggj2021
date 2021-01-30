@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class SimulatedAgent : MonoBehaviour, ISimulatedComponent
 {
+    public Vector2 AgentSpeedMultiplier = new Vector2(0.5f, 3f);
+
     NavMeshAgent navMeshAgentComponent;
 
     bool recording;
@@ -14,6 +16,15 @@ public class SimulatedAgent : MonoBehaviour, ISimulatedComponent
     void Awake()
     {
         navMeshAgentComponent = GetComponent<NavMeshAgent>();
+
+        float Multiplier = Random.Range(AgentSpeedMultiplier.x, AgentSpeedMultiplier.y);
+        navMeshAgentComponent.speed *= Multiplier;
+        navMeshAgentComponent.angularSpeed *= Multiplier;
+        navMeshAgentComponent.acceleration *= Multiplier;
+
+        Vector3 destination = NavMeshUtilities.GetRandomLocationOnNavMesh();
+        navMeshAgentComponent.SetDestination(destination);
+        navMeshAgentComponent.isStopped = true;
     }
 
     public void OnEnable()
@@ -29,8 +40,6 @@ public class SimulatedAgent : MonoBehaviour, ISimulatedComponent
     public void OnRecordSimulationStarted()
     {
         recording = true;
-        Vector3 destination = NavMeshUtilities.GetRandomLocationOnNavMesh();
-        navMeshAgentComponent.SetDestination(destination);
     }
 
     public void OnRecordSimulationFinished()
