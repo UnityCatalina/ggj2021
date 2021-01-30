@@ -13,6 +13,8 @@ public class ScreenControl : MonoBehaviour
     public ControlButton reverseButton;
     public ControlButton fastReverseButton;
 
+    public Collider[] exitColliders;
+
     // Start is called before the first frame update
     void Awake()
     {

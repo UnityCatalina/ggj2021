@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -76,6 +77,11 @@ public class UI : MonoBehaviour
                     (collider == mainCamControl.activeScreen.scrubber.scrubLineCollider))
                 {
                     draggingScrubber = true;
+                }
+                else if (Array.Exists(mainCamControl.activeScreen.exitColliders,
+                    exitCollider => collider == exitCollider))
+                {
+                    mainCamControl.activeScreen = null;
                 }
             }
             else if (Input.GetMouseButtonDown(1))
