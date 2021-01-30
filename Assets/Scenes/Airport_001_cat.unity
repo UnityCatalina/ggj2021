@@ -35284,6 +35284,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1782713393}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1784340209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1784340212}
+  - component: {fileID: 1784340211}
+  - component: {fileID: 1784340210}
+  m_Layer: 0
+  m_Name: Duty-Free_Lady
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &1784340210
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784340209}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!320 &1784340211
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784340209}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 6514553a8ac756e4f8f67e5611615253, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -7017691730176306700, guid: 6514553a8ac756e4f8f67e5611615253, type: 2}
+    value: {fileID: 1784340210}
+  m_ExposedReferences:
+    m_References: []
+--- !u!4 &1784340212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784340209}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1783885570525066509}
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1802208813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41543,6 +41614,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2146858709}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1783885570525066509 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6308030569874554977, guid: 1fa5d508d2d8e934194a934723a30107,
+    type: 3}
+  m_PrefabInstance: {fileID: 5713662855740061036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2442353061988933852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41687,3 +41764,72 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3971456157222775532}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5713662855740061036
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1784340212}
+    m_Modifications:
+    - target: {fileID: 6308030569874554977, guid: 1fa5d508d2d8e934194a934723a30107,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308030569874554977, guid: 1fa5d508d2d8e934194a934723a30107,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308030569874554977, guid: 1fa5d508d2d8e934194a934723a30107,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308030569874554977, guid: 1fa5d508d2d8e934194a934723a30107,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308030569874554977, guid: 1fa5d508d2d8e934194a934723a30107,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308030569874554977, guid: 1fa5d508d2d8e934194a934723a30107,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308030569874554977, guid: 1fa5d508d2d8e934194a934723a30107,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308030569874554977, guid: 1fa5d508d2d8e934194a934723a30107,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308030569874554977, guid: 1fa5d508d2d8e934194a934723a30107,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308030569874554977, guid: 1fa5d508d2d8e934194a934723a30107,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308030569874554977, guid: 1fa5d508d2d8e934194a934723a30107,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683747349360925403, guid: 1fa5d508d2d8e934194a934723a30107,
+        type: 3}
+      propertyPath: m_Name
+      value: Duty-Free_Lady
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1fa5d508d2d8e934194a934723a30107, type: 3}
