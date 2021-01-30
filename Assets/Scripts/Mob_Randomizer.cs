@@ -14,7 +14,7 @@ public class Mob_Randomizer : MonoBehaviour
     void Start()
     {
         float skinRandom = Random.Range(-0.7f,1f);
-        Color SuitRandom = new Color(Random.Range(-2f, 7f), Random.Range(-2f,7f), Random.Range(-2f, 7f));
+        Color SuitRandom = new Color(Random.Range(-2f, 2f), Random.Range(-2f,2f), Random.Range(-2f, 2f));
 
 
         Material SkinTone = gameObject.GetComponent<MeshRenderer>().materials[0];
