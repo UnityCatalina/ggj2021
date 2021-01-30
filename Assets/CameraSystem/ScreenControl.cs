@@ -34,7 +34,6 @@ public class ScreenControl : MonoBehaviour
     {
         screenCamera = screenCam;
         SetRt(null);
-        screenCam.cam.enabled = true;
     }
 
     public void SetRt(RenderTexture overrideRt)
@@ -45,6 +44,12 @@ public class ScreenControl : MonoBehaviour
             screenCamera.cam.targetTexture = rt;
             meshRend.material.SetTexture("_EmissionMap", rt, UnityEngine.Rendering.RenderTextureSubElement.Color);
         }
+    }
+
+    public void SetCamEnabled(bool enabled)
+    {
+        if (screenCamera != null)
+            screenCamera.cam.enabled = enabled;
     }
 
     public void SetState(float t, int playSpeed)

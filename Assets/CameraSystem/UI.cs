@@ -21,6 +21,7 @@ public class UI : MonoBehaviour
     ScreenControl[] screenControls;
 
     RenderTexture bigRt;
+    int nextScreenToUpdate;
 
     float t;
     int playSpeed; // 0=pause, +/-1=forward/rev, +/-2=fast forward/rev
@@ -40,6 +41,8 @@ public class UI : MonoBehaviour
             Screen.currentResolution.height,
             24);
         bigRt.Create();
+
+        nextScreenToUpdate = 0;
     }
 
     private RaycastHit? RaycastMouse()
@@ -65,6 +68,37 @@ public class UI : MonoBehaviour
         mainCamControl.activeScreen = screenControl;
         if (screenControl != null)
             screenControl.SetRt(bigRt);
+    }
+
+    private void SetCamEnables()
+    {
+        foreach (var screenControl in screenControls)
+            screenControl.SetCamEnabled(false);
+
+        if (mainCamControl.activeScreen != null)
+        {
+            mainCamControl.activeScreen.SetCamEnabled(true);
+            // Want to immediately update small RT on exit
+            nextScreenToUpdate = Array.IndexOf(screenControls, mainCamControl.activeScreen);
+        }
+        else
+        {
+            int numEnabled = 0;
+            for (int i = 0; i != screenControls.Length; ++i)
+            {
+                int j = (nextScreenToUpdate + i) % screenControls.Length;
+                if (screenControls[j].screenCamera != null)
+                {
+                    screenControls[j].SetCamEnabled(true);
+                    ++numEnabled;
+                    if (numEnabled == 2)
+                    {
+                        nextScreenToUpdate = (j + 1) % screenControls.Length;
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     private ScreenControl GetFreeScreen()
@@ -219,5 +253,7 @@ public class UI : MonoBehaviour
 
         // Tell Dr Who what time it is
         TimeLord.SetTime(t * TimeLord.GetSequenceLength());
+
+        SetCamEnables();
     }
 }
