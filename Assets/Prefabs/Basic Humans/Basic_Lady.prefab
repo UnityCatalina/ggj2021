@@ -23,8 +23,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4317619137607502953}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.252, z: -1.314}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7926259270297209697}
@@ -156,9 +156,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95298dc5f10bca24eb2c4d90a6cc9204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hats: []
-  bags: []
-  backpacks: []
+  hats:
+  - {fileID: 7321455273734648889, guid: 44b4ca3fa05141646a59700412b2211d, type: 3}
+  - {fileID: 4673237085318206328, guid: 9ce3c91608e65804685bcd94ea5a5f11, type: 3}
+  - {fileID: 9085356019474137438, guid: c529a73f349e91546b433a9c39dd3397, type: 3}
+  - {fileID: 7207364516157885030, guid: 513306fb9897beb48b9014984ea00f32, type: 3}
+  - {fileID: 4228017667850953394, guid: f840f7564f1f7a841b66b8e9e7faf296, type: 3}
+  - {fileID: 3439547352079684843, guid: 5ddbca60474467549917e51521ac9a38, type: 3}
+  - {fileID: 9155866394840099753, guid: 14de19c02e52897439e8335dc3d4630a, type: 3}
+  bags:
+  - {fileID: 973277329302237683, guid: 7fb3ced7477661e4492320e7f4da589b, type: 3}
+  - {fileID: 4043516683823769790, guid: 1abf28ebefd4adf438cfe45b24220fb3, type: 3}
+  - {fileID: 2747404561423858310, guid: de5845c53a43ca84e98dc1c3dfbe3474, type: 3}
+  - {fileID: 6126475620449696647, guid: f80fdb98cd939ab40ae0360495014406, type: 3}
+  backpacks:
+  - {fileID: 3181471280335809298, guid: b4193b38c2a10fb40a9c06222708c597, type: 3}
+  - {fileID: 3846651067040381088, guid: a3faaa7ba28187747ba8d602ca07aac4, type: 3}
   companions: []
 --- !u!1 &7523511914184396313
 GameObject:
