@@ -19,6 +19,11 @@ public class Wobbler : MonoBehaviour
 
     void Start()
     {
+        if (transform.parent == null)
+        {
+            Debug.LogWarning("No wobbler parent, so I'm going to throw a Wobbly");
+            this.enabled = false;
+        }
         m_startPosition = transform.localPosition;
         m_startRotation = transform.localRotation;
     }
