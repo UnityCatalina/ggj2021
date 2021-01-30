@@ -101,5 +101,8 @@ public class UI : MonoBehaviour
 
         foreach (var screenControl in screenControls)
             screenControl.SetState(t, playSpeed);
+
+        // Tell Dr Who what time it is
+        TimeLord.SetTime(t * TimeLord.GetSequenceLength());
     }
 }
