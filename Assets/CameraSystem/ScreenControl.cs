@@ -31,9 +31,12 @@ public class ScreenControl : MonoBehaviour
 
     public void SetRt(RenderTexture overrideRt)
     {
-        RenderTexture rt = (overrideRt == null) ? defaultRt : overrideRt;
-        cam.targetTexture = rt;
-        meshRend.material.SetTexture("_EmissionMap", rt, UnityEngine.Rendering.RenderTextureSubElement.Color);
+        if (cam != null)
+        {
+            RenderTexture rt = (overrideRt == null) ? defaultRt : overrideRt;
+            cam.targetTexture = rt;
+            meshRend.material.SetTexture("_EmissionMap", rt, UnityEngine.Rendering.RenderTextureSubElement.Color);
+        }
     }
 
     public void SetState(float t, int playSpeed)
