@@ -8,12 +8,15 @@ public class DialogueRunner : MonoBehaviour
     public Image m_background;
     public TransitionedPanel m_dialogPanel;
     public TMPro.TextMeshProUGUI m_text;
+    public Image m_bubbleImage;
     public TriggerData m_testTrigger;
     public bool m_test;
 
     bool m_isRunning = false;
     int m_currentLine = 0;
     TriggerData m_currentDialog;
+    CharacterData m_lastCharacter;
+    bool m_bubbleFlip = false;
 
     static DialogueRunner s_instance;
 
@@ -60,8 +63,15 @@ public class DialogueRunner : MonoBehaviour
         {
             text = line.m_character.m_name + ": ";
             colour = line.m_character.m_textColour;
+            if (line.m_character != m_lastCharacter)
+            {
+                m_bubbleFlip = !m_bubbleFlip;
+                m_lastCharacter = line.m_character;
+            }
         }
         text += line.m_line;
+
+        m_bubbleImage.transform.localScale = new Vector3((m_bubbleFlip ? -1.0f :  1.0f), 1.0f, 1.0f);
 
         m_text.color = colour;
         m_text.text = text;
