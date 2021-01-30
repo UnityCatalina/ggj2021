@@ -8,6 +8,7 @@ public class ScreenControl : MonoBehaviour
     public MeshRenderer meshRend;
     public Camera cam;
 
+    public BoxCollider screenCollider;
     public Scrubber scrubber;
     public ControlButton forwardButton;
     public ControlButton fastForwardButton;
@@ -46,5 +47,24 @@ public class ScreenControl : MonoBehaviour
         fastForwardButton.SetState(playSpeed == 2);
         reverseButton.SetState(playSpeed == -1);
         fastReverseButton.SetState(playSpeed == -2);
+    }
+
+    public RaycastHit? RaycastThroughScreen(RaycastHit hit)
+    {
+        if (cam == null)
+            return null;
+
+        var localPoint = screenCollider.transform.InverseTransformPoint(hit.point);
+        var relCenterPoint = localPoint - screenCollider.center;
+        var normPoint = new Vector3(
+            -relCenterPoint.x / screenCollider.size.x,
+            relCenterPoint.y / screenCollider.size.y,
+            relCenterPoint.z / screenCollider.size.z) + new Vector3(0.5f, 0.5f, 0.5f);
+
+        var ray = cam.ViewportPointToRay(normPoint);
+        RaycastHit throughHit;
+        if (!Physics.Raycast(ray, out throughHit))
+            return null;
+        return throughHit;
     }
 }
