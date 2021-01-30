@@ -9,13 +9,11 @@ public class CameraMatcher : MonoBehaviour
     void Start()
     {
         var screenControls = FindObjectsOfType<ScreenControl>();
-        var screenCams = FindObjectsOfType<ScreenCamera>();
+        var screenCams = FindObjectsOfType<ScreenCamera>().Where(screenCam => screenCam.initiallyConnected);
         foreach (var (screenControl, screenCam) in screenControls.Zip(screenCams,
                 (screenControl, screenCam) => (screenControl, screenCam)))
         {
-            screenControl.screenCamera = screenCam;
-            screenControl.SetRt(null);
-            screenCam.cam.enabled = true;
+            screenControl.Connect(screenCam);
         }
     }
 

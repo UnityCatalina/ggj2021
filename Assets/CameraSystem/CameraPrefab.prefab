@@ -451,4 +451,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_name: 
   cam: {fileID: 1815864686500392212}
+  initiallyConnected: 0
   interpSpeed: 0.9999

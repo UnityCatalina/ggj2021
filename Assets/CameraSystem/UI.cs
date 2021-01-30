@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 enum Mode
@@ -64,6 +65,41 @@ public class UI : MonoBehaviour
         mainCamControl.activeScreen = screenControl;
         if (screenControl != null)
             screenControl.SetRt(bigRt);
+    }
+
+    private ScreenControl GetFreeScreen()
+    {
+        foreach (var screenControl in FindObjectsOfType<ScreenControl>())
+        {
+            if (screenControl.screenCamera == null)
+                return screenControl;
+        }
+        return null;
+    }
+
+    private bool ConnectCameras(List<String> cameraNames)
+    {
+        bool anyConnected = false;
+        foreach (var screenCamera in FindObjectsOfType<ScreenCamera>())
+        {
+            if ((screenCamera.cam.targetTexture == null) &&
+                cameraNames.Exists(name => screenCamera.m_name == name))
+            {
+                var screenControl = GetFreeScreen();
+                if (screenControl != null)
+                {
+                    screenControl.Connect(screenCamera);
+                    anyConnected = true;
+                }
+            }
+        }
+        return anyConnected;
+    }
+
+    private void EndEnhancing()
+    {
+        mainCamControl.activeScreen.screenCamera.ResetView();
+        mode = Mode.Normal;
     }
 
     // Update is called once per frame
@@ -147,24 +183,28 @@ public class UI : MonoBehaviour
                 break;
             case Mode.Enhancing:
                 if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
-                {
-                    mainCamControl.activeScreen.screenCamera.ResetView();
-                    mode = Mode.Normal;
-                }
+                    EndEnhancing();
                 else
                 {
                     enhanceTime += Time.deltaTime;
                     if ((enhanceTime >= 0.5f) && (enhanceTrigger != null))
                     {
                         DialogueRunner.StartDialogue(enhanceTrigger);
-                        enhanceTrigger = null;
                         mode = Mode.RunningDialogue;
                     }
                 }
                 break;
             case Mode.RunningDialogue:
                 if (DialogueRunner.IsFinished())
+                {
                     mode = Mode.Enhancing;
+                    if (ConnectCameras(enhanceTrigger.m_onTrigger.m_camerasToUnlock))
+                    {
+                        EndEnhancing();
+                        SetActiveScreen(null);
+                    }
+                    enhanceTrigger = null;
+                }
                 break;
         }
 

@@ -30,6 +30,13 @@ public class ScreenControl : MonoBehaviour
 
     }
 
+    public void Connect(ScreenCamera screenCam)
+    {
+        screenCamera = screenCam;
+        SetRt(null);
+        screenCam.cam.enabled = true;
+    }
+
     public void SetRt(RenderTexture overrideRt)
     {
         if (screenCamera != null)

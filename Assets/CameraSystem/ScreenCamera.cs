@@ -6,6 +6,7 @@ public class ScreenCamera : MonoBehaviour
 {
     public string m_name;
     public Camera cam;
+    public bool initiallyConnected;
     public float interpSpeed;
     Matrix4x4 defaultProjMatrix;
     Matrix4x4 targetProjMatrix;
