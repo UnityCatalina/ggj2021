@@ -504,7 +504,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 25, y: -75}
-  m_SizeDelta: {x: 250, y: 50}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1264565689
 MonoBehaviour:
@@ -637,7 +637,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 25, y: -25}
-  m_SizeDelta: {x: 250, y: 50}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1451144396
 MonoBehaviour:
@@ -1294,6 +1294,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SimulationTimeStep: 0.02
+  SimulationWarmUp: 0
+  LastRecordTime: 0
 --- !u!4 &1941849440
 Transform:
   m_ObjectHideFlags: 0

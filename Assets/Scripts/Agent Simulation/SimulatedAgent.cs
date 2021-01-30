@@ -7,6 +7,10 @@ public class SimulatedAgent : MonoBehaviour, ISimulatedComponent
 {
     NavMeshAgent navMeshAgentComponent;
 
+    bool recording;
+
+    float idle = 0;
+
     void Awake()
     {
         navMeshAgentComponent = GetComponent<NavMeshAgent>();
@@ -24,17 +28,16 @@ public class SimulatedAgent : MonoBehaviour, ISimulatedComponent
 
     public void OnRecordSimulationStarted()
     {
-        Vector3 destination = new Vector3();
-        destination.x = Random.Range(-100f, 100f);
-        destination.z = Random.Range(-100f, 100f);
+        recording = true;
+        Vector3 destination = NavMeshUtilities.GetRandomLocationOnNavMesh();
         navMeshAgentComponent.SetDestination(destination);
     }
 
     public void OnRecordSimulationFinished()
     {
         navMeshAgentComponent.isStopped = true;
+        recording = false;
     }
-
 
     public void OnRunSimulationStarted()
     {
@@ -55,4 +58,32 @@ public class SimulatedAgent : MonoBehaviour, ISimulatedComponent
     {
 
     }
+
+    public void Update()
+    {
+        if (recording)
+        {
+            if (!navMeshAgentComponent.pathPending)
+            {
+                if (navMeshAgentComponent.remainingDistance < 1f && idle <= 0)
+                {
+                    idle = Random.Range(0f, 10f);
+                    navMeshAgentComponent.isStopped = true;
+                }
+                else if (idle > 0)
+                {
+                    idle -= Time.deltaTime;
+                }
+
+                if (navMeshAgentComponent.isStopped && idle <= 0)
+                {
+                    Vector3 destination = NavMeshUtilities.GetRandomLocationOnNavMesh();
+                    navMeshAgentComponent.SetDestination(destination);
+                    navMeshAgentComponent.isStopped = false;
+                }
+            }
+        }
+    }
+
+
 }
