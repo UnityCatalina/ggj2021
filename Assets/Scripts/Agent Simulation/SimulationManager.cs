@@ -18,9 +18,9 @@ public class SimulationManager : MonoBehaviour
 
     public float SimulationTimeStep = 0.02f;
 
-    public float SimulationWarmUp = 0;
+    private float SimulationWarmUp = 0;
 
-    public float LastRecordTime = 0;
+    private float LastRecordTime = 0;
 
     public static SimulationManager Instance { get; private set; }
 
