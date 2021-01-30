@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1262727696997405671}
   - component: {fileID: 2749948619998944322}
   - component: {fileID: 129813818314074248}
+  - component: {fileID: 142604940721830835}
   m_Layer: 0
   m_Name: Fancy_Lady
   m_TagString: Untagged
@@ -83,6 +84,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &142604940721830835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931424712200784221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfab9c027629af249a474264f85511fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1009103747698536050
 PrefabInstance:
   m_ObjectHideFlags: 0
