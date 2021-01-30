@@ -95,7 +95,7 @@ public class UI : MonoBehaviour
 
         if (!draggingScrubber)
         {
-            float scaledTimeDelta = Time.deltaTime * playSpeed * (1.0f / 30.0f);
+            float scaledTimeDelta = Time.deltaTime * playSpeed * (1.0f / TimeLord.GetSequenceLength());
             t = Mathf.Clamp01(t + scaledTimeDelta);
         }
 
