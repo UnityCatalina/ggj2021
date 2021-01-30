@@ -2,9 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class MobAccessoeries
+{
+    public Mesh[] body;
+    public GameObject[] hats;
+    public GameObject[] bags;
+    public GameObject[] backpacks;
+    public GameObject[] companions;
+}
+
+
 public class Mob_Randomizer : MonoBehaviour
 {
-    string type;
+    public MobAccessoeries[] parts;
     public GameObject[] hats;
     public GameObject[] bags;
     public GameObject[] backpacks;
@@ -25,31 +36,38 @@ public class Mob_Randomizer : MonoBehaviour
         SuitColor.color += SuitRandom;
 
         //attach a hat, bag or backpack
-        int hasHat = Random.Range(0, hats.Length+1);
-        int hasBag = Random.Range(0, bags.Length+1);
-        int hasBackpack = Random.Range(0, backpacks.Length+1);
-
-        Transform[] items = gameObject.GetComponentsInChildren<Transform>();
-        foreach (Transform item in items)
+        if (parts.Length > 0)
         {
-            //check if i have a bag and spawn bag at position
-            if (item.name == "Bag" && hasBag!= bags.Length)
+            int partIndex = Random.Range(0, parts.Length);
+            int bodyIndex = Random.Range(0, parts[partIndex].body.Length);
+            int hatIndex = Random.Range(-1, parts[partIndex].hats.Length);
+            int bagIndex = Random.Range(-1, parts[partIndex].bags.Length);
+            int backpackIndex = Random.Range(-1, parts[partIndex].backpacks.Length);
+
+            MeshFilter meshfilter = GetComponent<MeshFilter>();
+            meshfilter.mesh = parts[partIndex].body[bodyIndex];
+
+            Transform[] items = gameObject.GetComponentsInChildren<Transform>();
+            foreach (Transform item in items)
             {
-                Instantiate(bags[hasBag], item.transform, false);
-                item.transform.GetComponentInChildren<MeshRenderer>().material.color += bagRandom;
-            }
-            //check if i have a hat and spawn bag at position
-            if (item.name == "Hat" && hasHat!=hats.Length)
-            {
-                Debug.Log(hasHat);
-                Instantiate(hats[hasHat], item.transform, false);
-                item.transform.GetComponentInChildren<MeshRenderer>().material.color += hairRandom;
-            }
-            //check if i have a backpack and spawn bag at position
-            if (item.name == "Backpack" && hasBackpack!=backpacks.Length)
-            {
-                Instantiate(backpacks[hasBackpack], item.transform, false);
-                item.transform.GetComponentInChildren<MeshRenderer>().material.color +=  (SuitRandom - hairRandom);
+                //check if i have a bag and spawn bag at position
+                if (item.name == "Bag" && bagIndex >= 0)
+                {
+                    Instantiate(parts[partIndex].bags[bagIndex], item.transform, false);
+                    item.transform.GetComponentInChildren<MeshRenderer>().material.color += bagRandom;
+                }
+                //check if i have a hat and spawn bag at position
+                if (item.name == "Hat" && hatIndex >= 0)
+                {
+                    Instantiate(parts[partIndex].hats[hatIndex], item.transform, false);
+                    item.transform.GetComponentInChildren<MeshRenderer>().material.color += hairRandom;
+                }
+                //check if i have a backpack and spawn bag at position
+                if (item.name == "Backpack" && backpackIndex >= 0)
+                {
+                    Instantiate(parts[partIndex].backpacks[backpackIndex], item.transform, false);
+                    item.transform.GetComponentInChildren<MeshRenderer>().material.color += (SuitRandom - hairRandom);
+                }
             }
         }
     }

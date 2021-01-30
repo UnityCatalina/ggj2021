@@ -9,7 +9,7 @@ public class AgentSpawner : MonoBehaviour
 
     public int Amount;
 
-    public void Start()
+    public void Spawn()
     {
         if (Agent)
         {
