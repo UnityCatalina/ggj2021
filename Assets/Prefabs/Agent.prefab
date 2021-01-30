@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3582642512957838557}
   - component: {fileID: 3582642512957838545}
   - component: {fileID: 9014022246329730215}
-  - component: {fileID: -2789132787915587970}
+  - component: {fileID: 5993880670680841754}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -106,7 +106,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3582642512957838554}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9a1d19ac5783fd428856ac979f506ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-2789132787915587970
+--- !u!114 &5993880670680841754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,11 +140,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3582642512957838554}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6090da511f8374135a15dd8655adcd44, type: 3}
+  m_Script: {fileID: 11500000, guid: b4cbcc4747611b444b7e0bf7f6eda674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _recordingInterval: 0.0416
-  _mode: 1
-  _globalClockKey: Default
-  _rewindable: 1
-  _recordingDuration: 60

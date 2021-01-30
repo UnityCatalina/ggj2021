@@ -1,4 +1,4 @@
-﻿using Chronos;
+﻿
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,17 +6,12 @@ using UnityEngine;
 
 public class UISpeedControl : MonoBehaviour
 {
-    TextMeshProUGUI label;
-
-    public void Awake()
-    {
-        label = GetComponent<TextMeshProUGUI>();
-    }
+    public TextMeshProUGUI SpeedLabel;
+    public TextMeshProUGUI TimeLabel;
 
     public void Update()
     {
-        Clock clock = Chronos.Timekeeper.instance.Clock("Default");
-
-        label.text = "Speed: " + clock.localTimeScale;
+        SpeedLabel.text = "Speed: " + SimulationManager.Instance.SimulationSpeed;
+        TimeLabel.text = "Time: " + (int)SimulationManager.Instance.SimulationTime + "/" + (int)SimulationManager.Instance.Duration;
     }
 }
