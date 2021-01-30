@@ -5,13 +5,13 @@ using UnityEngine;
 public class Wobbler : MonoBehaviour
 {
     Vector3 m_startPosition;
-    public Vector3 m_translationWobble;
-    public Vector3 m_translationWobbleFrequence;
+    Vector3 m_translationWobble = new Vector3(0.0f, 0.1f, 0.0f);
+    Vector3 m_translationWobbleFrequence = new Vector3(1.0f, 4.0f, 1.0f);
     Quaternion m_startRotation;
-    public Vector3 m_rotationWobble;
-    public Vector3 m_rotationWobbleFrequence;
-    public float m_minSpeedWobble = 0.1f;
-    public float m_maxSpeedWobble = 1.0f;
+    Vector3 m_rotationWobble = new Vector3(0.0f, 5.0f, 0.0f);
+    Vector3 m_rotationWobbleFrequence = new Vector3(4.0f, 2.0f, 4.0f);
+    float m_minSpeedWobble = 0.1f;
+    float m_maxSpeedWobble = 1.0f;
 
     Vector3 m_lastParentPosition;
     float m_lastParentSampleTime;
