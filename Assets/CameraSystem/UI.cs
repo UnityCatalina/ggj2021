@@ -7,9 +7,12 @@ public class UI : MonoBehaviour
 {
     public AudioSource audioSource;
     public AudioClip pressClip;
-    MainCamControl mainCamControl;
+    public MainCamControl mainCamControl;
     Camera mainCam;
     ScreenControl[] screenControls;
+
+    RenderTexture bigRt;
+
     float t;
     int playSpeed; // 0=pause, +/-1=forward/rev, +/-2=fast forward/rev
     bool draggingScrubber;
@@ -17,9 +20,15 @@ public class UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mainCamControl = FindObjectOfType<MainCamControl>();
         mainCam = mainCamControl.GetComponent<Camera>();
         screenControls = FindObjectsOfType<ScreenControl>();
+        
+        // Assume screen res won't change...
+        bigRt = new RenderTexture(
+            Screen.currentResolution.width,
+            Screen.currentResolution.height,
+            24);
+        bigRt.Create();
     }
 
     private Collider GetColliderAtMouse()
@@ -36,6 +45,17 @@ public class UI : MonoBehaviour
         audioSource.PlayOneShot(pressClip);
     }
 
+    private void SetActiveScreen(ScreenControl screenControl)
+    {
+        if (mainCamControl.activeScreen == screenControl)
+            return;
+        if (mainCamControl.activeScreen != null)
+            mainCamControl.activeScreen.SetRt(null);
+        mainCamControl.activeScreen = screenControl;
+        if (screenControl != null)
+            screenControl.SetRt(bigRt);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -47,7 +67,7 @@ public class UI : MonoBehaviour
                 {
                     var collider = GetColliderAtMouse();
                     if (collider != null)
-                        mainCamControl.activeScreen = collider.GetComponent<ScreenControl>();
+                        SetActiveScreen(collider.GetComponent<ScreenControl>());
                 }
             }
             else if (Input.GetMouseButtonDown(0))
@@ -81,11 +101,11 @@ public class UI : MonoBehaviour
                 else if (Array.Exists(mainCamControl.activeScreen.exitColliders,
                     exitCollider => collider == exitCollider))
                 {
-                    mainCamControl.activeScreen = null;
+                    SetActiveScreen(null);
                 }
             }
             else if (Input.GetMouseButtonDown(1))
-                mainCamControl.activeScreen = null;
+                SetActiveScreen(null);
         }
 
         if (draggingScrubber)

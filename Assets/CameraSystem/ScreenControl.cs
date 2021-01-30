@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ScreenControl : MonoBehaviour
 {
-    public RenderTexture rt;
+    RenderTexture defaultRt;
     public MeshRenderer meshRend;
+    public Camera cam;
 
     public Scrubber scrubber;
     public ControlButton forwardButton;
@@ -18,15 +19,21 @@ public class ScreenControl : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        rt = new RenderTexture(400, 300, 24);
-        rt.Create();
-        meshRend.material.SetTexture("_EmissionMap", rt, UnityEngine.Rendering.RenderTextureSubElement.Color);
+        defaultRt = new RenderTexture(400, 300, 24);
+        defaultRt.Create();
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    public void SetRt(RenderTexture overrideRt)
+    {
+        RenderTexture rt = (overrideRt == null) ? defaultRt : overrideRt;
+        cam.targetTexture = rt;
+        meshRend.material.SetTexture("_EmissionMap", rt, UnityEngine.Rendering.RenderTextureSubElement.Color);
     }
 
     public void SetState(float t, int playSpeed)

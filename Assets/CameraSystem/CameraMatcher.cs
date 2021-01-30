@@ -12,10 +12,10 @@ public class CameraMatcher : MonoBehaviour
         var screenCams = FindObjectsOfType<ScreenCamera>();
         foreach (var (screenControl, screenCam) in screenControls.Zip(screenCams,
                 (screenControl, screenCam) => (screenControl, screenCam)))
-        { 
-            var cam = screenCam.GetComponent<Camera>();
-            cam.targetTexture = screenControl.rt;
-            cam.enabled = true;
+        {
+            screenControl.cam = screenCam.GetComponent<Camera>();
+            screenControl.SetRt(null);
+            screenControl.cam.enabled = true;
         }
     }
 
