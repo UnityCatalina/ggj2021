@@ -1,6 +1,4 @@
-﻿using Chronos;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class SimulationControl : MonoBehaviour
@@ -10,19 +8,37 @@ public class SimulationControl : MonoBehaviour
 
     void Update()
     {
-        Clock clock = Chronos.Timekeeper.instance.Clock("Default");
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SimulationManager.Instance.RecordSimulation(8f, 30f);
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SimulationManager.Instance.RunSimulation(0f, 1f);
+        }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             speedIndex = Mathf.Max(speedIndex - 1, 0);
-            clock.localTimeScale = speedIntervals[speedIndex];
+            SimulationManager.Instance.SetSimulationSpeed(speedIntervals[speedIndex]);
         }
         
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             speedIndex = Mathf.Min(speedIndex + 1, speedIntervals.Count - 1);
-            clock.localTimeScale = speedIntervals[speedIndex];
+            SimulationManager.Instance.SetSimulationSpeed(speedIntervals[speedIndex]);
         }
 
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            SimulationManager.Instance.SetSimulationTime(SimulationManager.Instance.SimulationTime + 10f);
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            SimulationManager.Instance.SetSimulationTime(SimulationManager.Instance.SimulationTime - 10f);
+        }
     }
+
 }
