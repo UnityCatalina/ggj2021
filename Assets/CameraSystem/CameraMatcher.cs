@@ -13,9 +13,9 @@ public class CameraMatcher : MonoBehaviour
         foreach (var (screenControl, screenCam) in screenControls.Zip(screenCams,
                 (screenControl, screenCam) => (screenControl, screenCam)))
         {
-            screenControl.cam = screenCam.GetComponent<Camera>();
+            screenControl.screenCamera = screenCam;
             screenControl.SetRt(null);
-            screenControl.cam.enabled = true;
+            screenCam.cam.enabled = true;
         }
     }
 

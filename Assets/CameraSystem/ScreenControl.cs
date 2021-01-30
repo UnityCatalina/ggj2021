@@ -6,7 +6,7 @@ public class ScreenControl : MonoBehaviour
 {
     RenderTexture defaultRt;
     public MeshRenderer meshRend;
-    public Camera cam;
+    public ScreenCamera screenCamera;
 
     public BoxCollider screenCollider;
     public Scrubber scrubber;
@@ -32,10 +32,10 @@ public class ScreenControl : MonoBehaviour
 
     public void SetRt(RenderTexture overrideRt)
     {
-        if (cam != null)
+        if (screenCamera != null)
         {
             RenderTexture rt = (overrideRt == null) ? defaultRt : overrideRt;
-            cam.targetTexture = rt;
+            screenCamera.cam.targetTexture = rt;
             meshRend.material.SetTexture("_EmissionMap", rt, UnityEngine.Rendering.RenderTextureSubElement.Color);
         }
     }
@@ -49,22 +49,13 @@ public class ScreenControl : MonoBehaviour
         fastReverseButton.SetState(playSpeed == -2);
     }
 
-    public RaycastHit? RaycastThroughScreen(RaycastHit hit)
+    public Vector3 NormalisePoint(Vector3 point)
     {
-        if (cam == null)
-            return null;
-
-        var localPoint = screenCollider.transform.InverseTransformPoint(hit.point);
+        var localPoint = screenCollider.transform.InverseTransformPoint(point);
         var relCenterPoint = localPoint - screenCollider.center;
-        var normPoint = new Vector3(
+        return new Vector3(
             -relCenterPoint.x / screenCollider.size.x,
             relCenterPoint.y / screenCollider.size.y,
             relCenterPoint.z / screenCollider.size.z) + new Vector3(0.5f, 0.5f, 0.5f);
-
-        var ray = cam.ViewportPointToRay(normPoint);
-        RaycastHit throughHit;
-        if (!Physics.Raycast(ray, out throughHit))
-            return null;
-        return throughHit;
     }
 }
