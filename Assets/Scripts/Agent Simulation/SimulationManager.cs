@@ -20,8 +20,6 @@ public class SimulationManager : MonoBehaviour
 
     private float SimulationWarmUp = 0;
 
-    private float LastRecordTime = 0;
-
     public static SimulationManager Instance { get; private set; }
 
     public void Awake()
