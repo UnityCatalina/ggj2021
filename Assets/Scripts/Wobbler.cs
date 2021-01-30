@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CatTest_Script : MonoBehaviour
+public class Wobbler : MonoBehaviour
 {
+    TimeLord time;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class CatTest_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
