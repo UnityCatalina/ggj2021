@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AgentSpawner : MonoBehaviour
 {
@@ -14,11 +15,7 @@ public class AgentSpawner : MonoBehaviour
         {
             for (int i = 0; i < Amount; i++)
             {
-                Vector3 location = new Vector3();
-                location.x = Random.Range(-100f, 100f);
-                location.z = Random.Range(-100f, 100f);
-
-                GameObject.Instantiate(Agent, location, Quaternion.identity);
+                GameObject.Instantiate(Agent, NavMeshUtilities.GetRandomLocationOnNavMesh(), Quaternion.identity);
             }
         }
     }
