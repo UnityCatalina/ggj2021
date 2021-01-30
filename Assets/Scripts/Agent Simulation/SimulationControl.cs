@@ -10,7 +10,7 @@ public class SimulationControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SimulationManager.Instance.RecordSimulation(8f, 30f);
+            SimulationManager.Instance.RecordSimulation(4f, 160f, 2f);
         }
 
         if (Input.GetKeyDown(KeyCode.P))
