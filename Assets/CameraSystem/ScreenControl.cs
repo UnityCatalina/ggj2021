@@ -64,7 +64,8 @@ public class ScreenControl : MonoBehaviour
 
     public void SetStatic(bool showStatic)
     {
-        meshRend.material.SetFloat("_NoiseScale", showStatic ? 1.0f : 0.05f);
+        if (screenCamera != null)
+            meshRend.material.SetFloat("_NoiseScale", showStatic ? 1.0f : 0.05f);
     }
 
     public Vector3 NormalisePoint(Vector3 point)
