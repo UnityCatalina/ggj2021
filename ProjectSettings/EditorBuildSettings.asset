@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Airport_001.unity
     guid: 09a2a4324c8eaaa4bba2301d80612b73
+  - enabled: 1
+    path: Assets/Scenes/Whodunnit.unity
+    guid: 72a87ca378adc6b4dbdb8473f460469b
   m_configObjects: {}
