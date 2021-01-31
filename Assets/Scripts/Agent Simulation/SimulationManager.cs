@@ -12,8 +12,6 @@ public class SimulationManager : MonoBehaviour
 
     public float SimulationTime { get; private set; }
 
-    public float SimulationSpeed { get; private set; }
-
     List<ISimulatedComponent> simulatedComponents = new List<ISimulatedComponent>();
 
     public float SimulationTimeStep = 0.02f;
@@ -59,9 +57,8 @@ public class SimulationManager : MonoBehaviour
         Duration = duration;
         SimulationTime = 0f;
         SimulationWarmUp = warmup;
-        SimulationSpeed = speed;
         Time.timeScale = 1f;
-        Time.captureDeltaTime = SimulationTimeStep * SimulationSpeed;
+        Time.captureDeltaTime = SimulationTimeStep * speed;
 
         foreach (ISimulatedComponent simulatedComponent in simulatedComponents)
         {
@@ -72,7 +69,6 @@ public class SimulationManager : MonoBehaviour
     public void StopRecording()
     {
         IsRecordingSimulation = false;
-        SimulationSpeed = 0f;
         Time.timeScale = 0f;
         Time.captureDeltaTime = 0f;
 
@@ -82,15 +78,13 @@ public class SimulationManager : MonoBehaviour
         }
     }
 
-    public void RunSimulation(float time, float speed)
+    public void RunSimulation()
     {
         if(IsRecordingSimulation)
         {
             return;
         }
 
-        SimulationTime = Mathf.Clamp(time, 0f, Duration);
-        SimulationSpeed = speed; 
         IsRunningSimulation = true;
         Time.timeScale = 1f;
 
@@ -102,13 +96,11 @@ public class SimulationManager : MonoBehaviour
 
     public void SetSimulationTime(float time)
     {
-        SimulationTime = Mathf.Clamp(time, 0f, Duration);
-        TickSimulation(0f);
-    }
-
-    public void SetSimulationSpeed(float speed)
-    {
-        SimulationSpeed = speed;
+        time = Mathf.Clamp(time, 0f, Duration);
+        foreach (ISimulatedComponent simulatedComponent in simulatedComponents)
+        {
+            simulatedComponent.TickSimulation(time);
+        }
     }
 
     public void Update()
@@ -125,23 +117,8 @@ public class SimulationManager : MonoBehaviour
             if (SimulationTime > Duration)
             {
                 StopRecording();
+                RunSimulation();
             }
-        }
-
-        if (IsRunningSimulation)
-        {
-            TickSimulation(Time.deltaTime);
-        }
-    }
-
-    public void TickSimulation(float deltaTime)
-    {
-        SimulationTime += deltaTime * SimulationSpeed;
-        SimulationTime = Mathf.Clamp(SimulationTime, 0f, Duration);
-
-        foreach (ISimulatedComponent simulatedComponent in simulatedComponents)
-        {
-            simulatedComponent.TickSimulation(SimulationTime);
         }
     }
 }

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7402096025013470355}
-  - component: {fileID: 7402096025013470354}
   - component: {fileID: 7402096025013470357}
   - component: {fileID: 7402096025013470352}
   - component: {fileID: 7572166654258838975}
@@ -34,18 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7402096025013470354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7402096025013470356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8a27dc0efd21e848955a6db7d03cfc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7402096025013470357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,3 +74,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spawner: {fileID: 7402096025013470352}
   SimulationManager: {fileID: 7402096025013470357}
+  LoadingCamera: {fileID: 0}
+  LoadingLabel: {fileID: 0}
