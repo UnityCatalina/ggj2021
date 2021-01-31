@@ -4,11 +4,13 @@ using UnityEngine;
 
 public interface IInteraction
 {
-    Vector3 Location { get; }
+    Vector3 GetLocation();
 
-    bool Available { get; set;  }
+    bool IsAvailable();
 
     void Reserve(GameObject Object);
 
     void DoAction(GameObject Object);
+
+    bool IsControlling(GameObject Object);
 }
