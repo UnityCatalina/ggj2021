@@ -1603,10 +1603,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2281053274544876157, guid: 9effda51e0e2e8742aff245e336f792e,
+        type: 3}
+      propertyPath: m_onTrigger.m_dialog.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5067130780578912288, guid: 9effda51e0e2e8742aff245e336f792e,
         type: 3}
       propertyPath: m_Name
       value: CameraRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394568851975643039, guid: 9effda51e0e2e8742aff245e336f792e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9effda51e0e2e8742aff245e336f792e, type: 3}
