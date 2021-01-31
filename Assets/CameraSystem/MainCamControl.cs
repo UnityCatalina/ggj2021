@@ -29,7 +29,7 @@ public class MainCamControl : MonoBehaviour
             rotation = activeScreen.transform.rotation * Quaternion.Euler(0.0f, 180.0f, 0.0f);
         }
 
-        var t = Mathf.Pow(1.0f - interpSpeed, Time.deltaTime);
+        var t = Mathf.Pow(1.0f - interpSpeed, Time.unscaledDeltaTime);
         cam.transform.position = Vector3.Lerp(pos, cam.transform.position, t);
         cam.transform.rotation = Quaternion.Slerp(rotation, cam.transform.rotation, t);
     }

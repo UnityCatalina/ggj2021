@@ -222,7 +222,7 @@ public class UI : MonoBehaviour
                     EndEnhancing();
                 else
                 {
-                    enhanceTime += Time.deltaTime;
+                    enhanceTime += Time.unscaledDeltaTime;
                     if ((enhanceTime >= 0.5f) && (enhanceTrigger != null))
                     {
                         DialogueRunner.StartDialogue(enhanceTrigger);
