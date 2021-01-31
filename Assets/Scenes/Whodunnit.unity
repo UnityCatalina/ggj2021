@@ -317,6 +317,8 @@ MonoBehaviour:
     m_dialog:
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
       m_line: Surely he is too old? Perhaps its a disguise?
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: That's a very ageist comment. Terrorism is an equal-opportunity employer!
     m_camerasToUnlock: []
 --- !u!136 &181238259
 CapsuleCollider:
@@ -1157,7 +1159,7 @@ MonoBehaviour:
     m_dialog:
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
       m_line: Alright; we've gathered all the suspects you identified from the CCTV
-        footage, as well as a couple other suspicious characters.
+        footage, as well as a couple of other suspicious characters.
     - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
       m_line: I've got my own opinions, but you're the Detective - it's time to choose
         who we put away...
@@ -2009,6 +2011,10 @@ MonoBehaviour:
         have figured out such an insidious crime!
     - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
       m_line: We have much to learn...
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: ...and so do you! A staunch defender of the peace for his entire career,
+        this innocent security officer was never able to come to terms with becoming
+        the very thing he had fought so hard against.
     m_camerasToUnlock: []
 --- !u!114 &1120489783
 MonoBehaviour:
@@ -3563,6 +3569,10 @@ MonoBehaviour:
       m_line: That was terrible.
     - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
       m_line: I know...
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: It *was* terrible - just as terrible as your Detective skills. Despite
+        what retail staff working another 12-hour shift on Christmas Eve would like
+        to believe, shopping is *not* a crime.
     m_camerasToUnlock: []
 --- !u!114 &212452116777425817
 MonoBehaviour:
@@ -3579,7 +3589,7 @@ MonoBehaviour:
   m_onTrigger:
     m_dialog:
     - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
-      m_line: Want to jail this subject? Click on them again to confirm.
+      m_line: Want to jail this suspect? Click on them again to confirm.
     m_camerasToUnlock: []
 --- !u!114 &212452116777425818
 MonoBehaviour:
@@ -3710,6 +3720,10 @@ MonoBehaviour:
       m_line: 'Probably high on catnip too. '
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
       m_line: Don't do drugs, kids. Not even if you're a cat.
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: He was right, but you were wrong. The cat was guilty of nothing, and
+        the public backlash that followed, the grass-roots political campaigns, the
+        riots, even the revolution, were both brutal and richly deserved.
     m_camerasToUnlock: []
 --- !u!114 &490758584325912206
 MonoBehaviour:
@@ -3726,7 +3740,7 @@ MonoBehaviour:
   m_onTrigger:
     m_dialog:
     - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
-      m_line: Want to jail this subject? Click on them again to confirm and invoke
+      m_line: Want to jail this suspect? Click on them again to confirm and invoke
         the wrath of the internet.
     m_camerasToUnlock: []
 --- !u!4 &560103446799908459
@@ -4001,6 +4015,10 @@ MonoBehaviour:
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
       m_line: That or the Detective wants to make an example to  misbehaving little
         girls everywhere...
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Your motives aside, you chose poorly. Little Cindy was guilty of nothing
+        more than wanting to pet a cute kitty, and a spent her spends her days in
+        her cell plotting her revenge against you and your whole family.
     m_camerasToUnlock: []
 --- !u!114 &1276299861264654305
 MonoBehaviour:
@@ -4308,7 +4326,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: I guess blowing stuff up is not, in fact, a young man's game.
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: It's...not a game at all. It's really dangerous! And illegal!
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: Right! Which is why this guy is going away for a really long time.
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: I mean...probably not *that* long...
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Falsely convicted of attempted terrorism, this beloved grandfather
+        of eight lived out the remainder of his years not surrounded by his loved
+        ones, but surrounded by thieves, murderers, and a truly horrifying number
+        of cockroaches.
     m_camerasToUnlock: []
 --- !u!114 &1869795465141415028
 MonoBehaviour:
@@ -4323,7 +4354,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Want to jail this suspect? Click on them again to confirm.
     m_camerasToUnlock: []
 --- !u!23 &1919574853360318467
 MeshRenderer:
@@ -4407,6 +4440,11 @@ MonoBehaviour:
         the cat?
     - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
       m_line: Good point; we'd better put an APB out right away before it kills again...
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Separated from her cat, Mildred was inconsolable. Bewildered at the
+        baseless accusations levelled against her, she accepted her imprisonment
+        with quiet dignity and went quietly mad, scraping line drawings of cats into
+        her cell walls until every square inch was covered with feline imagery.
     m_camerasToUnlock: []
 --- !u!114 &1931424710475430514
 MonoBehaviour:
@@ -4635,6 +4673,10 @@ MonoBehaviour:
         there a special zoo for them?
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
       m_line: Who's a murderous boy then? It's you! That's right!
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Convicted of attempted murder, this poor, innocent dog was sentenced
+        to live imprisonment with no possibility of walkies, scritches, or fetching
+        anything ever again. You are a monster.
     m_camerasToUnlock: []
 --- !u!114 &2638476777329657548
 MonoBehaviour:
@@ -5136,6 +5178,10 @@ MonoBehaviour:
       m_line: Such a shame. She made really good coffee...
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
       m_line: It's always the quiet ones, you know?
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: It isn't. And brooding in silent anger at her unjust improsonment,
+        the waitress become a stewing vessel of hatred, unleashing murderous calamity
+        on all who crossed her at the prison cafeteria.
     m_camerasToUnlock: []
 --- !u!114 &4355014261084694322
 MonoBehaviour:
@@ -5211,9 +5257,15 @@ MonoBehaviour:
   m_onTrigger:
     m_dialog:
     - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
-      m_line: Good choice, Detective. Who knows what other tech she was packing!
+      m_line: Good choice, Detective. Who knows what other destructive tech she was
+        packing!
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
       m_line: Oh, sure - she was going to blow up a supermarket with a pager next...
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Against all odds, you cut through the fog of false leads and misleading
+        clues to correctly identify the bomber. Her employer had tasked her with
+        retaking  stolen trade secrets, and with the files dropped into the Lost
+        & Found, she had no choice but to destroy them with explosives. Nice work!
     m_camerasToUnlock: []
 --- !u!114 &4391373259937585569
 MonoBehaviour:
@@ -5230,7 +5282,7 @@ MonoBehaviour:
   m_onTrigger:
     m_dialog:
     - m_character: {fileID: 0}
-      m_line: Want to jail this subject? Click on them again to confirm.
+      m_line: Want to jail this suspect? Click on them again to confirm.
     m_camerasToUnlock: []
 --- !u!114 &4391373259937585570
 MonoBehaviour:
@@ -5251,6 +5303,11 @@ MonoBehaviour:
     - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
       m_line: I'd say suspiciously so. Who carries  that kind of tech to an airport?
         I reckon that's our bomber.
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: Oh come on - you're the one who still listens to eight-track tapes
+        in the car!
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: It's not my fault all my music is on tape...
     m_camerasToUnlock: []
 --- !u!114 &4391373259937585571
 MonoBehaviour:
@@ -5426,6 +5483,10 @@ MonoBehaviour:
       m_line: There he goes...a victim of circumstance, or a foiled criminal mastermind?
     - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
       m_line: We may never know...
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Unfortunately, you nailed the wrong suspect. A thief, perhaps, but
+        guilty only of stealing the secret sauce recipe from his favourite fast-food
+        franchise.
     m_camerasToUnlock: []
 --- !u!114 &4673782445731274468
 MonoBehaviour:
@@ -5442,7 +5503,7 @@ MonoBehaviour:
   m_onTrigger:
     m_dialog:
     - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
-      m_line: Want to jail this subject? Click on them again to confirm.
+      m_line: Want to jail this suspect? Click on them again to confirm.
     m_camerasToUnlock: []
 --- !u!114 &4673782445731274469
 MonoBehaviour:
@@ -5478,9 +5539,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  Intro: {fileID: 4391373259937585570}
-  Confirm: {fileID: 4391373259937585569}
-  Result: {fileID: 4391373259937585568}
+  Intro: {fileID: 4673782445731274469}
+  Confirm: {fileID: 4673782445731274468}
+  Result: {fileID: 4673782445731274467}
   Light: {fileID: 1061820895}
 --- !u!136 &4673782445731274471
 CapsuleCollider:
@@ -5575,6 +5636,12 @@ MonoBehaviour:
       m_line: No, I think this just proves that even parents can be killers.
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
       m_line: At least they'll have each other for company during their life sentences!
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: The Smiths were indeed imprisoned together, and little Tom was brought
+        up by his innocent father to hate the police, the justice system, and society
+        as a whole. When eventually released 30 years later, he would seek to exact
+        a revenge both terrible and swift upon those who had wronged him and his
+        family.
     m_camerasToUnlock: []
 --- !u!114 &4916819815983562785
 MonoBehaviour:
@@ -6489,6 +6556,10 @@ MonoBehaviour:
       m_line: HAH! See? The Detective agrees with me! Take that you evil, furry fiend!
     - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
       m_line: ...you're both nuts.
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Unfortunately, he was right. The Teddy Bear had nothing to do with
+        it, and you had to live with the guilt for the rest of your life after watching
+        the innocent stuffed toy fed into a wood chipper for his alleged crimes.
     m_camerasToUnlock: []
 --- !u!114 &8240377377523134584
 MonoBehaviour:
@@ -6505,7 +6576,7 @@ MonoBehaviour:
   m_onTrigger:
     m_dialog:
     - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
-      m_line: Want to jail this subject? Click on them again to confirm.
+      m_line: Want to jail this suspect? Click on them again to confirm.
     m_camerasToUnlock: []
 --- !u!33 &8242944307162244140
 MeshFilter:
