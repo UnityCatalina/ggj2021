@@ -11183,6 +11183,11 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6019564726631638279, guid: 302cf5e7aedc07d4a892f0052682a77b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7010511704071151109, guid: 302cf5e7aedc07d4a892f0052682a77b,
         type: 3}
       propertyPath: m_RootOrder
