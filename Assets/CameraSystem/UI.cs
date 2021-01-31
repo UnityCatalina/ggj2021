@@ -4,23 +4,29 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 enum Mode
 {
+    Starting,
     Normal,
     DraggingScrubber,
     Enhancing,
-    RunningDialogue
+    RunningDialogue,
+    Ending
 }
 
 public class UI : MonoBehaviour
 {
     public AudioSource audioSource;
     public AudioClip pressClip;
+    public AudioClip bigRedPressClip;
     public MainCamControl mainCamControl;
     ScreenControl[] screenControls;
     public TextMeshProUGUI statusText;
     public TextMeshProUGUI timeText;
+    public TriggerData startDialogue;
+    public Collider bigRedButtonCollider;
 
     RenderTexture bigRt;
     int nextScreenToUpdate;
@@ -48,6 +54,9 @@ public class UI : MonoBehaviour
         bigRt.Create();
 
         nextScreenToUpdate = 0;
+
+        mode = Mode.Starting;
+        DialogueRunner.StartDialogue(startDialogue);
     }
 
     private RaycastHit? RaycastMouse()
@@ -149,7 +158,9 @@ public class UI : MonoBehaviour
             statusText.text = "PAUSE";
         else switch (mode)
         {
+            case Mode.Starting:
             case Mode.Normal:
+            case Mode.Ending:
                 statusText.text =
                     (playSpeed == -FastMult) ? String.Format("{0}X REVERSE", FastMult) :
                     (playSpeed == -1) ? "REVERSE" :
@@ -170,11 +181,21 @@ public class UI : MonoBehaviour
         timeText.text = String.Format("{0}:{1:D2}", secs / 60, secs % 60);
     }
 
+    private IEnumerator nextScene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(2);
+    }
+
     // Update is called once per frame
     void Update()
     {
         switch (mode)
         {
+            case Mode.Starting:
+                if (DialogueRunner.IsFinished())
+                    mode = Mode.Normal;
+                break;
             case Mode.Normal:
                 if (mainCamControl.activeScreen == null)
                 {
@@ -182,7 +203,17 @@ public class UI : MonoBehaviour
                     {
                         var maybeHit = RaycastMouse();
                         if (maybeHit is RaycastHit hit)
-                            SetActiveScreen(hit.collider.GetComponent<ScreenControl>());
+                        {
+                            var screenControl = hit.collider.GetComponent<ScreenControl>();
+                            if (screenControl != null)
+                                SetActiveScreen(screenControl);
+                            else if (hit.collider == bigRedButtonCollider)
+                            {
+                                mode = Mode.Ending;
+                                audioSource.PlayOneShot(bigRedPressClip);
+                                StartCoroutine("nextScene");
+                            }
+                        }
                     }
                 }
                 else if (Input.GetMouseButtonDown(0))
