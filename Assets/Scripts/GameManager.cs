@@ -19,6 +19,15 @@ public class GameManager : MonoBehaviour
         yield return StartCoroutine(LoadScene("Airport_001"));
 
         Spawner.Spawn();
+
+        while (!Input.anyKey)
+        {
+            yield return null;
+        }
+
+        LoadingCamera.gameObject.SetActive(false);
+        LoadingLabel.GetComponentInParent<Canvas>().gameObject.SetActive(false);
+
         SimulationManager.RecordSimulation(4f, 120f, 0f);
     }
 
@@ -34,18 +43,11 @@ public class GameManager : MonoBehaviour
             if(asyncOperation.progress >= .9f)
             {
                 LoadingLabel.text = "Press any key to continue";
-
-                if (Input.anyKey)
-                {
-                    asyncOperation.allowSceneActivation = true;
-                }
+                asyncOperation.allowSceneActivation = true;
             }
 
             yield return null;
         }
-
-        LoadingCamera.gameObject.SetActive(false);
-        LoadingLabel.GetComponentInParent<Canvas>().gameObject.SetActive(false);
     }
 
 }

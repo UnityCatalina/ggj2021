@@ -9,6 +9,16 @@ public class AgentSpawner : MonoBehaviour
 
     public int Amount;
 
+    public bool SpawnOnStart = false;
+
+    public void Start()
+    {
+        if(SpawnOnStart)
+        {
+            Spawn();
+        }
+    }
+
     public void Spawn()
     {
         if (Agent)
