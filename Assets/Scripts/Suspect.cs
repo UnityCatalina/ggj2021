@@ -32,6 +32,25 @@ public class Suspect : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        if (DialogueRunner.IsFinished() && IsFinished && selected == id)
+        {
+            Light[] Lights = FindObjectsOfType<Light>();
+            foreach (Light light in Lights)
+            {
+                if (Light != light)
+                {
+                    light.gameObject.SetActive(false);
+                }
+                else
+                {
+                    Light.gameObject.SetActive(true);
+                }
+            }
+        }
+    }
+
     public void OnMouseDown()
     {
         if (DialogueRunner.IsFinished() && !IsFinished)
