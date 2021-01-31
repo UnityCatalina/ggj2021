@@ -34,12 +34,13 @@ public class UI : MonoBehaviour
     void Start()
     {
         screenControls = FindObjectsOfType<ScreenControl>();
-        
+
         // Assume screen res won't change...
-        bigRt = new RenderTexture(
-            Screen.currentResolution.width,
-            Screen.currentResolution.height,
-            24);
+        int w = Screen.currentResolution.width;
+        int h = Screen.currentResolution.height;
+        int wFromH = (h * 4) / 3;
+        int hFromW = (w * 3) / 4;
+        bigRt = new RenderTexture(Math.Min(w, wFromH), Math.Min(h, hFromW), 24);
         bigRt.Create();
 
         nextScreenToUpdate = 0;
