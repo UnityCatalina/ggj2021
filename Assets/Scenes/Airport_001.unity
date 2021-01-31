@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465775, g: 0.49641234, b: 0.5748196, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9706,6 +9706,70 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 434361225}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &438869129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 438869132}
+  - component: {fileID: 438869131}
+  - component: {fileID: 438869130}
+  m_Layer: 9
+  m_Name: LadySuitcaseDropoffTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &438869130
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438869129}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &438869131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438869129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc4c7b983e57ca41a545866f80e2cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_onTrigger:
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: She dropped off the suitcase at Lost and Found
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: Hmm, was there something important about that suitcase?
+    m_camerasToUnlock: []
+--- !u!4 &438869132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438869129}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1667918438}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &449102345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11871,6 +11935,70 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 522448258}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &522559399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 522559400}
+  - component: {fileID: 522559402}
+  - component: {fileID: 522559401}
+  m_Layer: 9
+  m_Name: SnoopTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &522559400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522559399}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1151062470}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &522559401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522559399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc4c7b983e57ca41a545866f80e2cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_onTrigger:
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: Looks like she's following someone
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: Suspicious...
+    m_camerasToUnlock: []
+--- !u!135 &522559402
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522559399}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &529900449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18268,6 +18396,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5007724149065729276, guid: 71f13a0a5f68a6f4dbc722eab559df98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7828884182980791748, guid: 71f13a0a5f68a6f4dbc722eab559df98,
         type: 3}
       propertyPath: m_Name
@@ -18333,6 +18466,12 @@ PrefabInstance:
 --- !u!95 &848178843 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 786368446, guid: 71f13a0a5f68a6f4dbc722eab559df98,
+    type: 3}
+  m_PrefabInstance: {fileID: 848178842}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &848178844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5007724149065729276, guid: 71f13a0a5f68a6f4dbc722eab559df98,
     type: 3}
   m_PrefabInstance: {fileID: 848178842}
   m_PrefabAsset: {fileID: 0}
@@ -20656,6 +20795,70 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 953500572}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &965460419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965460422}
+  - component: {fileID: 965460421}
+  - component: {fileID: 965460420}
+  m_Layer: 9
+  m_Name: PhoneCallTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &965460420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965460419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc4c7b983e57ca41a545866f80e2cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_onTrigger:
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: Look!  She's doing something with her phone
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: A phone call?
+    m_camerasToUnlock: []
+--- !u!135 &965460421
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965460419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &965460422
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965460419}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1151062470}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &970760411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21333,7 +21536,7 @@ Transform:
   - {fileID: 822352799}
   - {fileID: 1451734547}
   m_Father: {fileID: 1217440114}
-  m_RootOrder: 67
+  m_RootOrder: 66
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1005453684
 PrefabInstance:
@@ -24824,7 +25027,7 @@ Transform:
   - {fileID: 1565308354}
   - {fileID: 1029667141}
   m_Father: {fileID: 1217440114}
-  m_RootOrder: 14
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1149995231
 PrefabInstance:
@@ -24981,9 +25184,15 @@ PlayableDirector:
   - key: {fileID: 5338206331832356997, guid: 2ffeff017f0951a49b72f0ac813d0afd, type: 2}
     value: {fileID: 1151062468}
   - key: {fileID: -5398823907322848327, guid: 2ffeff017f0951a49b72f0ac813d0afd, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1681630000}
   - key: {fileID: -8719548240640800838, guid: 2ffeff017f0951a49b72f0ac813d0afd, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1681630002}
+  - key: {fileID: -8247279321388930262, guid: 2ffeff017f0951a49b72f0ac813d0afd, type: 2}
+    value: {fileID: 522559399}
+  - key: {fileID: -3970477060694155025, guid: 2ffeff017f0951a49b72f0ac813d0afd, type: 2}
+    value: {fileID: 965460419}
+  - key: {fileID: -3714113482314109299, guid: 2ffeff017f0951a49b72f0ac813d0afd, type: 2}
+    value: {fileID: 1278236951}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1151062470
@@ -24998,6 +25207,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 301776579}
+  - {fileID: 522559400}
+  - {fileID: 965460422}
+  - {fileID: 1278236954}
   m_Father: {fileID: 0}
   m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26232,26 +26444,27 @@ Transform:
   - {fileID: 767066770}
   - {fileID: 486249305}
   - {fileID: 2042268141}
+  - {fileID: 1148590813}
   - {fileID: 476122579}
   - {fileID: 406663701}
   - {fileID: 832162081}
   - {fileID: 730790397}
   - {fileID: 680586988}
-  - {fileID: 1148590813}
+  - {fileID: 1707539779}
   - {fileID: 2079062805}
   - {fileID: 384592607}
   - {fileID: 146884414}
-  - {fileID: 1707539779}
   - {fileID: 264198415}
+  - {fileID: 1696495114}
   - {fileID: 1170935456}
   - {fileID: 1214594450}
   - {fileID: 1019036614}
   - {fileID: 1187316642}
-  - {fileID: 1696495114}
   - {fileID: 1965930568}
   - {fileID: 1648197862}
   - {fileID: 1544878685}
   - {fileID: 1359657885}
+  - {fileID: 1407938184}
   - {fileID: 1503791505}
   - {fileID: 1883454636}
   - {fileID: 2138129893}
@@ -26271,7 +26484,7 @@ Transform:
   - {fileID: 2075410872}
   - {fileID: 59887588}
   - {fileID: 1420596656}
-  - {fileID: 1407938184}
+  - {fileID: 1580577169}
   - {fileID: 245922988}
   - {fileID: 1414019587}
   - {fileID: 1056884916}
@@ -26288,15 +26501,14 @@ Transform:
   - {fileID: 2146858710}
   - {fileID: 652083836}
   - {fileID: 1240802319}
-  - {fileID: 1580577169}
-  - {fileID: 1585623097}
   - {fileID: 997257693}
+  - {fileID: 1585623097}
+  - {fileID: 2044105295}
   - {fileID: 332457687}
   - {fileID: 1451062992}
   - {fileID: 1262023970}
   - {fileID: 1035057123}
   - {fileID: 179950518}
-  - {fileID: 2044105295}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27991,6 +28203,72 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1275224534}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1278236951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1278236954}
+  - component: {fileID: 1278236953}
+  - component: {fileID: 1278236952}
+  m_Layer: 9
+  m_Name: BombTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &1278236952
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278236951}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1278236953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278236951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc4c7b983e57ca41a545866f80e2cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_onTrigger:
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: She... threw her phone into the Lost and Found?
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: It looks like - why would she do that?  Did she find it somewhere?
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: We need to look back at the footage
+    m_camerasToUnlock: []
+--- !u!4 &1278236954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278236951}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1151062470}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1278582168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29875,7 +30153,7 @@ Transform:
   m_LocalScale: {x: 0.1907571, y: 1, z: 0.16723391}
   m_Children: []
   m_Father: {fileID: 1217440114}
-  m_RootOrder: 48
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &1410691355
 PrefabInstance:
@@ -30755,6 +31033,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 974142989, guid: 5d313f3c61de36b4c91bb162d8f80e1d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433073143062744465, guid: 5d313f3c61de36b4c91bb162d8f80e1d,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433073143062744465, guid: 5d313f3c61de36b4c91bb162d8f80e1d,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[10].key
+      value: 
+      objectReference: {fileID: 5409492161382497249, guid: 9b399ca625fc915498f88fc54f91744e,
+        type: 2}
     - target: {fileID: 1433073143062744465, guid: 5d313f3c61de36b4c91bb162d8f80e1d,
         type: 3}
       propertyPath: m_SceneBindings.Array.data[1].value
@@ -30780,6 +31073,11 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[8].value
       value: 
       objectReference: {fileID: 1233895459}
+    - target: {fileID: 1433073143062744465, guid: 5d313f3c61de36b4c91bb162d8f80e1d,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[10].value
+      value: 
+      objectReference: {fileID: 848178844}
     - target: {fileID: 5283886323689578175, guid: 5d313f3c61de36b4c91bb162d8f80e1d,
         type: 3}
       propertyPath: m_Name
@@ -30839,6 +31137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654972602762689944, guid: 5d313f3c61de36b4c91bb162d8f80e1d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d313f3c61de36b4c91bb162d8f80e1d, type: 3}
@@ -31271,6 +31574,70 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9effda51e0e2e8742aff245e336f792e, type: 3}
+--- !u!1 &1477505225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1477505228}
+  - component: {fileID: 1477505227}
+  - component: {fileID: 1477505226}
+  m_Layer: 9
+  m_Name: LadySuitcasePickupTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &1477505226
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477505225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1477505227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477505225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc4c7b983e57ca41a545866f80e2cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_onTrigger:
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: The lady picks up someone's forgotten suitcase
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: Where does she go with it?
+    m_camerasToUnlock: []
+--- !u!4 &1477505228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477505225}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1667918438}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1477756132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33960,7 +34327,7 @@ Transform:
   m_LocalScale: {x: 293.5594, y: 2.2160854, z: 106.69379}
   m_Children: []
   m_Father: {fileID: 1217440114}
-  m_RootOrder: 65
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1585186457
 PrefabInstance:
@@ -35351,6 +35718,10 @@ PlayableDirector:
     value: {fileID: 1667918436}
   - key: {fileID: -331456083905409549, guid: 6514553a8ac756e4f8f67e5611615253, type: 2}
     value: {fileID: 869148836}
+  - key: {fileID: -2299083500419902355, guid: 6514553a8ac756e4f8f67e5611615253, type: 2}
+    value: {fileID: 1477505225}
+  - key: {fileID: 6340469373669933399, guid: 6514553a8ac756e4f8f67e5611615253, type: 2}
+    value: {fileID: 438869129}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1667918438
@@ -35365,9 +35736,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 869148835}
+  - {fileID: 1477505228}
+  - {fileID: 438869132}
   m_Father: {fileID: 0}
   m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1681630000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 984806658813148632, guid: 674e4c505f02bd0448042ff0e02c9b15,
+    type: 3}
+  m_PrefabInstance: {fileID: 301776578}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1681630002 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2019005513483692842, guid: 674e4c505f02bd0448042ff0e02c9b15,
+    type: 3}
+  m_PrefabInstance: {fileID: 301776578}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1682980600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35907,7 +36292,7 @@ Transform:
   - {fileID: 1023046666}
   - {fileID: 790932482}
   m_Father: {fileID: 1217440114}
-  m_RootOrder: 24
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1698120446
 GameObject:
@@ -36358,7 +36743,7 @@ Transform:
   m_LocalScale: {x: 0.81973153, y: 0.8070142, z: 0.80611426}
   m_Children: []
   m_Father: {fileID: 1217440114}
-  m_RootOrder: 18
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1725546234
 PrefabInstance:
@@ -42050,7 +42435,7 @@ Transform:
   m_LocalScale: {x: 293.5594, y: 2.2160854, z: 106.69379}
   m_Children: []
   m_Father: {fileID: 1217440114}
-  m_RootOrder: 73
+  m_RootOrder: 68
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!65 &2044105296
 BoxCollider:
