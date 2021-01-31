@@ -56,9 +56,9 @@ public class ScreenControl : MonoBehaviour
     {
         scrubber.SetState(t);
         forwardButton.SetState(playSpeed == 1);
-        fastForwardButton.SetState(playSpeed == 2);
+        fastForwardButton.SetState(playSpeed == UI.FastMult);
         reverseButton.SetState(playSpeed == -1);
-        fastReverseButton.SetState(playSpeed == -2);
+        fastReverseButton.SetState(playSpeed == -UI.FastMult);
     }
 
     public Vector3 NormalisePoint(Vector3 point)

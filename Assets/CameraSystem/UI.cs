@@ -23,11 +23,13 @@ public class UI : MonoBehaviour
     int nextScreenToUpdate;
 
     float t;
-    int playSpeed; // 0=pause, +/-1=forward/rev, +/-2=fast forward/rev
+    int playSpeed; // 0=pause, +/-1=forward/rev, +/-FastMult=fast forward/rev
     Mode mode;
     // Valid iff mode=Enhancing or mode=RunningDialogue
     float enhanceTime;
     TriggerData enhanceTrigger;
+
+    public static int FastMult = 4;
 
     // Start is called before the first frame update
     void Start()
@@ -163,7 +165,7 @@ public class UI : MonoBehaviour
                         }
                         else if (hit.collider == mainCamControl.activeScreen.fastForwardButton.pressCollider)
                         {
-                            playSpeed = (playSpeed == 2) ? 0 : 2;
+                            playSpeed = (playSpeed == FastMult) ? 0 : FastMult;
                             PlayPressSound();
                         }
                         else if (hit.collider == mainCamControl.activeScreen.reverseButton.pressCollider)
@@ -173,7 +175,7 @@ public class UI : MonoBehaviour
                         }
                         else if (hit.collider == mainCamControl.activeScreen.fastReverseButton.pressCollider)
                         {
-                            playSpeed = (playSpeed == -2) ? 0 : -2;
+                            playSpeed = (playSpeed == -FastMult) ? 0 : -FastMult;
                             PlayPressSound();
                         }
                         else if ((hit.collider == mainCamControl.activeScreen.scrubber.dragCollider) ||
