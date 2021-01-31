@@ -32,6 +32,7 @@ public class UI : MonoBehaviour
     int nextScreenToUpdate;
 
     float t;
+    bool resetTime;
     int playSpeed; // 0=pause, +/-1=forward/rev, +/-FastMult=fast forward/rev
     Mode mode;
     // Valid iff mode=Enhancing or mode=RunningDialogue
@@ -57,6 +58,8 @@ public class UI : MonoBehaviour
 
         mode = Mode.Starting;
         DialogueRunner.StartDialogue(startDialogue);
+
+        resetTime = true;
     }
 
     private RaycastHit? RaycastMouse()
@@ -312,6 +315,12 @@ public class UI : MonoBehaviour
             t = SimulationManager.Instance.SimulationTime / TimeLord.GetSequenceLength();
         else if ((SimulationManager.Instance == null) || SimulationManager.Instance.IsRunningSimulation)
         {
+            if (resetTime)
+            {
+                resetTime = false;
+                t = 0.0f;
+            }
+
             if (mode == Mode.Normal)
             {
                 float scaledTimeDelta = Time.deltaTime * playSpeed * (1.0f / TimeLord.GetSequenceLength());
