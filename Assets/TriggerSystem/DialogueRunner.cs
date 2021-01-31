@@ -90,7 +90,7 @@ public class DialogueRunner : MonoBehaviour
             }
             return;
         }
-        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+        if (m_dialogPanel.IsTransitionedOn() && (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)))
         {
             // skip text?
             m_dialogPanel.TransitionOff();
