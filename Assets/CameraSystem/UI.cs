@@ -143,15 +143,19 @@ public class UI : MonoBehaviour
 
     private void SetText()
     {
-        switch (mode)
+        if (SimulationManager.Instance.IsRecordingSimulation)
+            statusText.text = "PLAY";
+        else if (!SimulationManager.Instance.IsRunningSimulation)
+            statusText.text = "PAUSE";
+        else switch (mode)
         {
             case Mode.Normal:
                 statusText.text =
                     (playSpeed == -FastMult) ? String.Format("{0}X REVERSE", FastMult) :
-                    (playSpeed == -1) ? "1X REVERSE" :
+                    (playSpeed == -1) ? "REVERSE" :
                     (playSpeed == 0) ? "PAUSE" :
-                    (playSpeed == 1) ? "1X" :
-                    String.Format("{0}X", FastMult);
+                    (playSpeed == 1) ? "PLAY" :
+                    String.Format("{0}X PLAY", FastMult);
                 break;
             case Mode.DraggingScrubber:
                 statusText.text = "SEEK";
@@ -186,7 +190,16 @@ public class UI : MonoBehaviour
                     var maybeHit = RaycastMouse();
                     if (maybeHit is RaycastHit hit)
                     {
-                        if (hit.collider == mainCamControl.activeScreen.forwardButton.pressCollider)
+                        if (Array.Exists(mainCamControl.activeScreen.exitColliders,
+                            exitCollider => hit.collider == exitCollider))
+                        {
+                            SetActiveScreen(null);
+                        }
+                        else if (!SimulationManager.Instance.IsRunningSimulation)
+                        {
+                            // Disable controls unless running...
+                        }
+                        else if (hit.collider == mainCamControl.activeScreen.forwardButton.pressCollider)
                         {
                             playSpeed = (playSpeed == 1) ? 0 : 1;
                             PlayPressSound();
@@ -210,11 +223,6 @@ public class UI : MonoBehaviour
                             (hit.collider == mainCamControl.activeScreen.scrubber.scrubLineCollider))
                         {
                             mode = Mode.DraggingScrubber;
-                        }
-                        else if (Array.Exists(mainCamControl.activeScreen.exitColliders,
-                            exitCollider => hit.collider == exitCollider))
-                        {
-                            SetActiveScreen(null);
                         }
                         else if ((hit.collider == mainCamControl.activeScreen.screenCollider) &&
                             (mainCamControl.activeScreen.screenCamera != null))
@@ -269,10 +277,17 @@ public class UI : MonoBehaviour
                 break;
         }
 
-        if (mode == Mode.Normal)
+        if (SimulationManager.Instance.IsRecordingSimulation)
+            t = SimulationManager.Instance.SimulationTime / TimeLord.GetSequenceLength();
+        else if (SimulationManager.Instance.IsRunningSimulation)
         {
-            float scaledTimeDelta = Time.deltaTime * playSpeed * (1.0f / TimeLord.GetSequenceLength());
-            t = Mathf.Clamp01(t + scaledTimeDelta);
+            if (mode == Mode.Normal)
+            {
+                float scaledTimeDelta = Time.deltaTime * playSpeed * (1.0f / TimeLord.GetSequenceLength());
+                t = Mathf.Clamp01(t + scaledTimeDelta);
+            }
+
+            SimulationManager.Instance.SetSimulationTime(t * TimeLord.GetSequenceLength());
         }
 
         foreach (var screenControl in screenControls)

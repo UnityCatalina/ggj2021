@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         LoadingCamera.gameObject.SetActive(false);
         LoadingLabel.GetComponentInParent<Canvas>().gameObject.SetActive(false);
 
-        SimulationManager.RecordSimulation(4f, 120f, 0f);
+        SimulationManager.RecordSimulation(4f, TimeLord.GetSequenceLength(), 0f);
     }
 
     IEnumerator LoadScene(string name)
