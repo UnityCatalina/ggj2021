@@ -928,8 +928,8 @@ MonoBehaviour:
         their intended target was, but clearly they must\u2019ve gotten distracted
         and left the bomb somewhere it could be picked up as lost luggage."
     - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
-      m_line: "Problem is, we don\u2019t know what the bomb was, nor what it\u2019s
-        intended target - everything in the locker was destroyed by the blast."
+      m_line: "Problem is, we don\u2019t know what the bomb was, nor it\u2019s intended
+        target - everything in the locker was destroyed by the blast."
     - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
       m_line: "Fortunately, the airport has a state-of-the-art CCTV system, and you
         and a colleague from the police forensics department have been sent in to
