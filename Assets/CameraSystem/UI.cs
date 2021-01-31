@@ -17,7 +17,6 @@ public class UI : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip pressClip;
     public MainCamControl mainCamControl;
-    public Transform debugTransform;
     ScreenControl[] screenControls;
 
     RenderTexture bigRt;
@@ -197,11 +196,7 @@ public class UI : MonoBehaviour
                             enhanceTrigger = null;
                             var maybeThroughHit = mainCamControl.activeScreen.screenCamera.Raycast(normPoint);
                             if (maybeThroughHit is RaycastHit throughHit)
-                            {
                                 enhanceTrigger = throughHit.collider.GetComponent<TriggerData>();
-                                if (debugTransform != null)
-                                    debugTransform.position = throughHit.point;
-                            }
                         }
                     }
                 }
