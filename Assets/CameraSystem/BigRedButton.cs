@@ -37,9 +37,11 @@ public class BigRedButton : MonoBehaviour
             var maybeHit = RaycastMouse();
             if (maybeHit is RaycastHit hit)
             {
-                Debug.Log("Hit!");
-                PlayPressSound();
-                StartCoroutine("nextScene");
+                if (hit.collider.name == "BigRedButton")
+                {
+                    PlayPressSound();
+                    StartCoroutine("nextScene");
+                }
             }
         }
     }
@@ -47,6 +49,6 @@ public class BigRedButton : MonoBehaviour
     private IEnumerator nextScene()
     {
        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }

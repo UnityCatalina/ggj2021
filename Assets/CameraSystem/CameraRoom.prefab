@@ -728,7 +728,6 @@ GameObject:
   - component: {fileID: 1014447814734291885}
   - component: {fileID: 7776058072738810592}
   - component: {fileID: 291271659297599712}
-  - component: {fileID: 5953671467047276766}
   m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
@@ -797,19 +796,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &5953671467047276766
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8694054847676975123}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8792397832642213626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,12 +1067,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbd0cca309383654190a476d3bf21cdf, type: 3}
---- !u!82 &5394568853776055520 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6889129729589514823, guid: dbd0cca309383654190a476d3bf21cdf,
-    type: 3}
-  m_PrefabInstance: {fileID: 1532984429028388519}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5394568853185183781 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6889129728923168386, guid: dbd0cca309383654190a476d3bf21cdf,
@@ -1102,6 +1082,12 @@ MonoBehaviour:
 --- !u!4 &5394568853475817250 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6889129729756944773, guid: dbd0cca309383654190a476d3bf21cdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1532984429028388519}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5394568853776055520 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6889129729589514823, guid: dbd0cca309383654190a476d3bf21cdf,
     type: 3}
   m_PrefabInstance: {fileID: 1532984429028388519}
   m_PrefabAsset: {fileID: 0}
