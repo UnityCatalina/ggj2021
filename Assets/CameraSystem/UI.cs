@@ -156,7 +156,7 @@ public class UI : MonoBehaviour
     private void SetText()
     {
         if ((SimulationManager.Instance != null) && SimulationManager.Instance.IsRecordingSimulation)
-            statusText.text = "PLAY";
+            statusText.text = "SPOOL";
         else if ((SimulationManager.Instance != null) && !SimulationManager.Instance.IsRunningSimulation)
             statusText.text = "PAUSE";
         else switch (mode)
