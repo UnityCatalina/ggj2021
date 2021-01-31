@@ -13,6 +13,8 @@ public class SimulatedAgent : MonoBehaviour, ISimulatedComponent
 
     float idle = 0;
 
+    IInteraction interaction = null;
+
     void Awake()
     {
         navMeshAgentComponent = GetComponent<NavMeshAgent>();
@@ -22,7 +24,14 @@ public class SimulatedAgent : MonoBehaviour, ISimulatedComponent
         navMeshAgentComponent.angularSpeed *= Multiplier;
         navMeshAgentComponent.acceleration *= Multiplier;
 
-        Vector3 destination = NavMeshUtilities.GetRandomLocationOnNavMesh();
+        interaction = InteractionRegistar.GetAvailableInteraction();
+
+        if(interaction != null)
+        {
+            interaction.Reserve(gameObject);
+        }
+
+        Vector3 destination = interaction != null ? interaction.GetLocation() :  NavMeshUtilities.GetRandomLocationOnNavMesh();
         navMeshAgentComponent.SetDestination(destination);
         navMeshAgentComponent.isStopped = true;
     }
@@ -76,7 +85,15 @@ public class SimulatedAgent : MonoBehaviour, ISimulatedComponent
             {
                 if (navMeshAgentComponent.remainingDistance < 1f && idle <= 0)
                 {
-                    idle = Random.Range(0f, 10f);
+                    if (interaction != null)
+                    {
+                        interaction.DoAction(gameObject);
+                    }
+                    else
+                    {
+                        idle = Random.Range(0f, 10f);
+                    }
+
                     navMeshAgentComponent.isStopped = true;
                 }
                 else if (idle > 0)
@@ -84,11 +101,23 @@ public class SimulatedAgent : MonoBehaviour, ISimulatedComponent
                     idle -= Time.deltaTime;
                 }
 
-                if (navMeshAgentComponent.isStopped && idle <= 0)
+                if (interaction == null || !interaction.IsControlling(gameObject))
                 {
-                    Vector3 destination = NavMeshUtilities.GetRandomLocationOnNavMesh();
-                    navMeshAgentComponent.SetDestination(destination);
-                    navMeshAgentComponent.isStopped = false;
+                    interaction = null;
+
+                    if (navMeshAgentComponent.isStopped && idle <= 0)
+                    {
+                        interaction = InteractionRegistar.GetAvailableInteraction();
+                        if (interaction != null)
+                        {
+                            interaction.Reserve(gameObject);
+                        }
+
+                        Vector3 destination = interaction != null ? interaction.GetLocation() : NavMeshUtilities.GetRandomLocationOnNavMesh();
+                        navMeshAgentComponent.SetDestination(destination);
+
+                        navMeshAgentComponent.isStopped = false;
+                    }
                 }
             }
         }
