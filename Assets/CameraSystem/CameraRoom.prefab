@@ -341,6 +341,7 @@ GameObject:
   - component: {fileID: 2530646528484631107}
   - component: {fileID: 4221382970459053512}
   - component: {fileID: 5268162623090311780}
+  - component: {fileID: 912269378}
   m_Layer: 8
   m_Name: BigRedButton
   m_TagString: Untagged
@@ -423,6 +424,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &912269378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5793967572967547438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a69bf70321483ad4ba161075f3d0c286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 5394568853776055520}
+  pressClip: {fileID: 8300000, guid: cf6c5e0c6d6b04e06bba5cc4a07cc0bb, type: 3}
+  mainCamControl: {fileID: 5394568853185183781}
 --- !u!1 &6256184625739778969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,6 +1081,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbd0cca309383654190a476d3bf21cdf, type: 3}
+--- !u!82 &5394568853776055520 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6889129729589514823, guid: dbd0cca309383654190a476d3bf21cdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1532984429028388519}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5394568853185183781 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6889129728923168386, guid: dbd0cca309383654190a476d3bf21cdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1532984429028388519}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbbadb23618eec248821ef8db74d2160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5394568853475817250 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6889129729756944773, guid: dbd0cca309383654190a476d3bf21cdf,
