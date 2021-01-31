@@ -29,7 +29,8 @@ public class DialogueRunner : MonoBehaviour
     {
         if (s_instance == null)
         {
-            Debug.LogError("No DialogueRunner in scene!");
+            Debug.LogWarning("No DialogueRunner in scene!");
+            return;
         }
 
         s_instance.StartDialogueInner(trigger);
@@ -38,9 +39,9 @@ public class DialogueRunner : MonoBehaviour
 
     void StartDialogueInner(TriggerData trigger)
     {
-        if (trigger.m_onTrigger.m_dialog.Count <= 0)
+        if (trigger == null || trigger.m_onTrigger == null || trigger.m_onTrigger.m_dialog == null || trigger.m_onTrigger.m_dialog.Count <= 0)
         {
-            Debug.LogError("No dialog!");
+            Debug.LogWarning("No dialog!");
             return;
         }
         m_currentDialog = trigger;
