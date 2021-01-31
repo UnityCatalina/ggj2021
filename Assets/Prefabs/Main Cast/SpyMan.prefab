@@ -215,6 +215,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 1604709622118061178, guid: 9b399ca625fc915498f88fc54f91744e, type: 2}
     value: {fileID: 8654972602762689944}
+  - key: {fileID: 5409492161382497249, guid: 9b399ca625fc915498f88fc54f91744e, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!95 &1433073143062744464
@@ -245,7 +247,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 421197447621865814}
-  - component: {fileID: 236697044397942481}
   - component: {fileID: 3423793060788164660}
   - component: {fileID: 8288424653314985260}
   m_Layer: 0
@@ -269,21 +270,6 @@ Transform:
   m_Father: {fileID: 7578510257043628009}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &236697044397942481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8654972602762689944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fc4c7b983e57ca41a545866f80e2cda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_onTrigger:
-    m_dialog: []
-    m_camerasToUnlock: []
 --- !u!135 &3423793060788164660
 SphereCollider:
   m_ObjectHideFlags: 0
