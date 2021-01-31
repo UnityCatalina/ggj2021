@@ -6065,7 +6065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRend: {fileID: 4453584131243587982}
-  cam: {fileID: 0}
+  screenCamera: {fileID: 0}
   screenCollider: {fileID: 2516363185709094892}
   scrubber: {fileID: 9125203146207931869}
   forwardButton: {fileID: 5650557530954103991}
@@ -6087,8 +6087,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.30557704, y: 0.22739333, z: 0.03113216}
-  m_Center: {x: 6.3068284e-10, y: 0.027934842, z: 0.08814117}
+  m_Size: {x: 0.291, y: 0.22, z: 0.01}
+  m_Center: {x: 6.3068284e-10, y: 0.027934842, z: 0.08}
 --- !u!1 &4438781771401521776
 GameObject:
   m_ObjectHideFlags: 0
