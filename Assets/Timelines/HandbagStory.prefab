@@ -168,6 +168,71 @@ MonoBehaviour:
       m_line: So the handbag was stolen?  Seems unlikely to be the source of the
         bomb
     m_camerasToUnlock: []
+--- !u!1 &5284735188400776065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4855373209461255643}
+  - component: {fileID: 8786664016768371274}
+  - component: {fileID: 6161646750106919500}
+  m_Layer: 9
+  m_Name: WaitressPicksUpBag
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4855373209461255643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5284735188400776065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6269287923761742351}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &8786664016768371274
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5284735188400776065}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6161646750106919500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5284735188400776065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc4c7b983e57ca41a545866f80e2cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_onTrigger:
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: She finds a bag under the table
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: Where is she taking it?
+    m_camerasToUnlock:
+    - LostAndFoundCamera
 --- !u!135 &1724781432
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -483,15 +548,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1991470965200907541}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &6934192055743733659 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8905888763737879182, guid: beb3629e784071b4982460bfe705d31f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1991470965200907541}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6934192055743733658 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8905888763737879183, guid: beb3629e784071b4982460bfe705d31f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1991470965200907541}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6934192055743733659 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8905888763737879182, guid: beb3629e784071b4982460bfe705d31f,
     type: 3}
   m_PrefabInstance: {fileID: 1991470965200907541}
   m_PrefabAsset: {fileID: 0}
@@ -564,6 +629,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbff611700fe28c46abe78609765a601, type: 3}
+--- !u!4 &1104592053770415310 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2758283644052662232, guid: fbff611700fe28c46abe78609765a601,
+    type: 3}
+  m_PrefabInstance: {fileID: 2959754197613087510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6934192055649882510 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5271492146198469272, guid: fbff611700fe28c46abe78609765a601,
@@ -573,12 +644,6 @@ GameObject:
 --- !u!4 &6934192055649882511 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5271492146198469273, guid: fbff611700fe28c46abe78609765a601,
-    type: 3}
-  m_PrefabInstance: {fileID: 2959754197613087510}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1104592053770415310 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2758283644052662232, guid: fbff611700fe28c46abe78609765a601,
     type: 3}
   m_PrefabInstance: {fileID: 2959754197613087510}
   m_PrefabAsset: {fileID: 0}
@@ -737,15 +802,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82e7a95affeb4b844ba2a966f73e2a4e, type: 3}
---- !u!4 &1188786294672923896 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6580619543426931173, guid: 82e7a95affeb4b844ba2a966f73e2a4e,
-    type: 3}
-  m_PrefabInstance: {fileID: 5416814737052763421}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6934192055502320378 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3105045723099215847, guid: 82e7a95affeb4b844ba2a966f73e2a4e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5416814737052763421}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1188786294672923896 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6580619543426931173, guid: 82e7a95affeb4b844ba2a966f73e2a4e,
     type: 3}
   m_PrefabInstance: {fileID: 5416814737052763421}
   m_PrefabAsset: {fileID: 0}
@@ -845,7 +910,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 597205786, guid: e5d982dce34edd04ba67777d3641a282, type: 3}
       propertyPath: m_SceneBindings.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 597205786, guid: e5d982dce34edd04ba67777d3641a282, type: 3}
       propertyPath: m_SceneBindings.Array.data[1].key
@@ -853,9 +918,18 @@ PrefabInstance:
       objectReference: {fileID: -8533154709126848041, guid: 5e05563f77a998a459f91ff7493aec78,
         type: 2}
     - target: {fileID: 597205786, guid: e5d982dce34edd04ba67777d3641a282, type: 3}
+      propertyPath: m_SceneBindings.Array.data[2].key
+      value: 
+      objectReference: {fileID: -9006140264888465370, guid: 5e05563f77a998a459f91ff7493aec78,
+        type: 2}
+    - target: {fileID: 597205786, guid: e5d982dce34edd04ba67777d3641a282, type: 3}
       propertyPath: m_SceneBindings.Array.data[1].value
       value: 
       objectReference: {fileID: 7225438891386611827}
+    - target: {fileID: 597205786, guid: e5d982dce34edd04ba67777d3641a282, type: 3}
+      propertyPath: m_SceneBindings.Array.data[2].value
+      value: 
+      objectReference: {fileID: 5284735188400776065}
     - target: {fileID: 3980002059283823347, guid: e5d982dce34edd04ba67777d3641a282,
         type: 3}
       propertyPath: m_RootOrder
@@ -918,15 +992,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d982dce34edd04ba67777d3641a282, type: 3}
---- !u!4 &6269287923761742351 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3980002059283823347, guid: e5d982dce34edd04ba67777d3641a282,
-    type: 3}
-  m_PrefabInstance: {fileID: 6934192056543246588}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7310912145079082173 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 382420262296970305, guid: e5d982dce34edd04ba67777d3641a282,
+    type: 3}
+  m_PrefabInstance: {fileID: 6934192056543246588}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6269287923761742351 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3980002059283823347, guid: e5d982dce34edd04ba67777d3641a282,
     type: 3}
   m_PrefabInstance: {fileID: 6934192056543246588}
   m_PrefabAsset: {fileID: 0}
