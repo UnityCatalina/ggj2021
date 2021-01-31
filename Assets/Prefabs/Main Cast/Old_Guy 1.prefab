@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1349120272497686859}
   - component: {fileID: 2672554498929440494}
   - component: {fileID: 212273234297438756}
+  - component: {fileID: -9085084158707031991}
   m_Layer: 0
   m_Name: Old_Guy 1
   m_TagString: Untagged
@@ -81,3 +82,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &-9085084158707031991
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869795466429916145}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.532, y: 0.351, z: 0.666}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

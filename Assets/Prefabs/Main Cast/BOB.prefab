@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 560103447765789887}
   - component: {fileID: 3488663031129449242}
   - component: {fileID: 1697522545681684432}
+  - component: {fileID: 7227593346817603844}
   m_Layer: 0
   m_Name: BOB
   m_TagString: Untagged
@@ -81,6 +82,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &7227593346817603844
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904717418423481861}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &2649760635495385214
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3207382244522523569}
   - component: {fileID: 1958277201005114388}
   - component: {fileID: 4380249767640760542}
+  - component: {fileID: 7559132194776511643}
   m_Layer: 0
   m_Name: Jason
   m_TagString: Untagged
@@ -82,6 +83,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &7559132194776511643
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2866885881008529675}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &3100816671023500151
 PrefabInstance:
   m_ObjectHideFlags: 0
