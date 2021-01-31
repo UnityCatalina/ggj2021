@@ -5377,9 +5377,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  Intro: {fileID: 4391373259937585570}
-  Confirm: {fileID: 4391373259937585569}
-  Result: {fileID: 4391373259937585568}
+  Intro: {fileID: 4673782445731274469}
+  Confirm: {fileID: 4673782445731274469}
+  Result: {fileID: 4673782445731274469}
   Light: {fileID: 1061820895}
 --- !u!136 &4673782445731274471
 CapsuleCollider:
