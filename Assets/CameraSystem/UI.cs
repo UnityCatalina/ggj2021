@@ -199,7 +199,8 @@ public class UI : MonoBehaviour
                             if (maybeThroughHit is RaycastHit throughHit)
                             {
                                 enhanceTrigger = throughHit.collider.GetComponent<TriggerData>();
-                                debugTransform.position = throughHit.point;
+                                if (debugTransform != null)
+                                    debugTransform.position = throughHit.point;
                             }
                         }
                     }
