@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
         LoadingLabel.GetComponentInParent<Canvas>().gameObject.SetActive(false);
 
         SimulationManager.RecordSimulation(4f, TimeLord.GetSequenceLength(), 0f);
+
+        FindObjectOfType<UI>().enabled = true;
     }
 
     IEnumerator LoadScene(string name)
