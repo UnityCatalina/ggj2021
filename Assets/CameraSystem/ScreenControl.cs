@@ -28,7 +28,6 @@ public class ScreenControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void Connect(ScreenCamera screenCam)
@@ -61,6 +60,11 @@ public class ScreenControl : MonoBehaviour
         fastForwardButton.SetState(playSpeed == UI.FastMult);
         reverseButton.SetState(playSpeed == -1);
         fastReverseButton.SetState(playSpeed == -UI.FastMult);
+    }
+
+    public void SetStatic(bool showStatic)
+    {
+        meshRend.material.SetFloat("_NoiseScale", showStatic ? 1.0f : 0.0f);
     }
 
     public Vector3 NormalisePoint(Vector3 point)

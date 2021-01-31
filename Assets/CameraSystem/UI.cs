@@ -152,9 +152,9 @@ public class UI : MonoBehaviour
 
     private void SetText()
     {
-        if (SimulationManager.Instance.IsRecordingSimulation)
+        if ((SimulationManager.Instance != null) && SimulationManager.Instance.IsRecordingSimulation)
             statusText.text = "PLAY";
-        else if (!SimulationManager.Instance.IsRunningSimulation)
+        else if ((SimulationManager.Instance != null) && !SimulationManager.Instance.IsRunningSimulation)
             statusText.text = "PAUSE";
         else switch (mode)
         {
@@ -308,9 +308,9 @@ public class UI : MonoBehaviour
                 break;
         }
 
-        if (SimulationManager.Instance.IsRecordingSimulation)
+        if ((SimulationManager.Instance != null) && SimulationManager.Instance.IsRecordingSimulation)
             t = SimulationManager.Instance.SimulationTime / TimeLord.GetSequenceLength();
-        else if (SimulationManager.Instance.IsRunningSimulation)
+        else if ((SimulationManager.Instance == null) || SimulationManager.Instance.IsRunningSimulation)
         {
             if (mode == Mode.Normal)
             {
@@ -318,11 +318,17 @@ public class UI : MonoBehaviour
                 t = Mathf.Clamp01(t + scaledTimeDelta);
             }
 
-            SimulationManager.Instance.SetSimulationTime(t * TimeLord.GetSequenceLength());
+            if (SimulationManager.Instance != null)
+                SimulationManager.Instance.SetSimulationTime(t * TimeLord.GetSequenceLength());
         }
 
+        float remaining = (1.0f - t) * TimeLord.GetSequenceLength();
+        bool showStatic = remaining < 0.5f;
         foreach (var screenControl in screenControls)
+        {
             screenControl.SetState(t, playSpeed);
+            screenControl.SetStatic(showStatic);
+        }
 
         // Tell Dr Who what time it is
         TimeLord.SetTime(t * TimeLord.GetSequenceLength());
