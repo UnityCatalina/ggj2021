@@ -213,6 +213,8 @@ PlayableDirector:
     value: {fileID: 974142989}
   - key: {fileID: 2067065849347918615, guid: 9b399ca625fc915498f88fc54f91744e, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 1604709622118061178, guid: 9b399ca625fc915498f88fc54f91744e, type: 2}
+    value: {fileID: 8654972602762689944}
   m_ExposedReferences:
     m_References: []
 --- !u!95 &1433073143062744464
@@ -243,8 +245,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 421197447621865814}
+  - component: {fileID: 236697044397942481}
+  - component: {fileID: 3423793060788164660}
+  - component: {fileID: 8288424653314985260}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: TriggerAtSwap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,6 +269,56 @@ Transform:
   m_Father: {fileID: 7578510257043628009}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &236697044397942481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8654972602762689944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc4c7b983e57ca41a545866f80e2cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_onTrigger:
+    m_dialog: []
+    m_camerasToUnlock: []
+--- !u!135 &3423793060788164660
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8654972602762689944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8288424653314985260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8654972602762689944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc4c7b983e57ca41a545866f80e2cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_onTrigger:
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: Wait a sec!  Look at the suitcases!
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: That guy was fumbling with his ticket, and picked up the wrong case!
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: It looked like an honest mistake, but they both have the wrong suitcases
+        now!
+    m_camerasToUnlock: []
 --- !u!1001 &1433073143635043667
 PrefabInstance:
   m_ObjectHideFlags: 0
