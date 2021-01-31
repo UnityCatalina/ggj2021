@@ -7,6 +7,7 @@ public class ScreenControl : MonoBehaviour
     RenderTexture defaultRt;
     public MeshRenderer meshRend;
     public ScreenCamera screenCamera;
+    public RenderTexture overlayRt;
 
     public BoxCollider screenCollider;
     public Scrubber scrubber;
@@ -34,7 +35,7 @@ public class ScreenControl : MonoBehaviour
     {
         screenCamera = screenCam;
         SetRt(null);
-        screenCam.cam.enabled = true;
+        meshRend.material.SetTexture("_OverlayTex", overlayRt, UnityEngine.Rendering.RenderTextureSubElement.Color);
     }
 
     public void SetRt(RenderTexture overrideRt)
@@ -43,17 +44,23 @@ public class ScreenControl : MonoBehaviour
         {
             RenderTexture rt = (overrideRt == null) ? defaultRt : overrideRt;
             screenCamera.cam.targetTexture = rt;
-            meshRend.material.SetTexture("_EmissionMap", rt, UnityEngine.Rendering.RenderTextureSubElement.Color);
+            meshRend.material.SetTexture("_BaseTex", rt, UnityEngine.Rendering.RenderTextureSubElement.Color);
         }
+    }
+
+    public void SetCamEnabled(bool enabled)
+    {
+        if (screenCamera != null)
+            screenCamera.cam.enabled = enabled;
     }
 
     public void SetState(float t, int playSpeed)
     {
         scrubber.SetState(t);
         forwardButton.SetState(playSpeed == 1);
-        fastForwardButton.SetState(playSpeed == 2);
+        fastForwardButton.SetState(playSpeed == UI.FastMult);
         reverseButton.SetState(playSpeed == -1);
-        fastReverseButton.SetState(playSpeed == -2);
+        fastReverseButton.SetState(playSpeed == -UI.FastMult);
     }
 
     public Vector3 NormalisePoint(Vector3 point)

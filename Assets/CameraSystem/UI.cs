@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using TMPro;
 
 enum Mode
 {
@@ -17,29 +18,36 @@ public class UI : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip pressClip;
     public MainCamControl mainCamControl;
-    public Transform debugTransform;
     ScreenControl[] screenControls;
+    public TextMeshProUGUI statusText;
+    public TextMeshProUGUI timeText;
 
     RenderTexture bigRt;
+    int nextScreenToUpdate;
 
     float t;
-    int playSpeed; // 0=pause, +/-1=forward/rev, +/-2=fast forward/rev
+    int playSpeed; // 0=pause, +/-1=forward/rev, +/-FastMult=fast forward/rev
     Mode mode;
     // Valid iff mode=Enhancing or mode=RunningDialogue
     float enhanceTime;
     TriggerData enhanceTrigger;
 
+    public static int FastMult = 4;
+
     // Start is called before the first frame update
     void Start()
     {
         screenControls = FindObjectsOfType<ScreenControl>();
-        
+
         // Assume screen res won't change...
-        bigRt = new RenderTexture(
-            Screen.currentResolution.width,
-            Screen.currentResolution.height,
-            24);
+        int w = Screen.currentResolution.width;
+        int h = Screen.currentResolution.height;
+        int wFromH = (h * 4) / 3;
+        int hFromW = (w * 3) / 4;
+        bigRt = new RenderTexture(Math.Min(w, wFromH), Math.Min(h, hFromW), 24);
         bigRt.Create();
+
+        nextScreenToUpdate = 0;
     }
 
     private RaycastHit? RaycastMouse()
@@ -65,6 +73,37 @@ public class UI : MonoBehaviour
         mainCamControl.activeScreen = screenControl;
         if (screenControl != null)
             screenControl.SetRt(bigRt);
+    }
+
+    private void SetCamEnables()
+    {
+        foreach (var screenControl in screenControls)
+            screenControl.SetCamEnabled(false);
+
+        if (mainCamControl.activeScreen != null)
+        {
+            mainCamControl.activeScreen.SetCamEnabled(true);
+            // Want to immediately update small RT on exit
+            nextScreenToUpdate = Array.IndexOf(screenControls, mainCamControl.activeScreen);
+        }
+        else
+        {
+            int numEnabled = 0;
+            for (int i = 0; i != screenControls.Length; ++i)
+            {
+                int j = (nextScreenToUpdate + i) % screenControls.Length;
+                if (screenControls[j].screenCamera != null)
+                {
+                    screenControls[j].SetCamEnabled(true);
+                    ++numEnabled;
+                    if (numEnabled == 2)
+                    {
+                        nextScreenToUpdate = (j + 1) % screenControls.Length;
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     private ScreenControl GetFreeScreen()
@@ -102,6 +141,31 @@ public class UI : MonoBehaviour
         mode = Mode.Normal;
     }
 
+    private void SetText()
+    {
+        switch (mode)
+        {
+            case Mode.Normal:
+                statusText.text =
+                    (playSpeed == -FastMult) ? String.Format("{0}X REVERSE", FastMult) :
+                    (playSpeed == -1) ? "1X REVERSE" :
+                    (playSpeed == 0) ? "PAUSE" :
+                    (playSpeed == 1) ? "1X" :
+                    String.Format("{0}X", FastMult);
+                break;
+            case Mode.DraggingScrubber:
+                statusText.text = "SEEK";
+                break;
+            case Mode.Enhancing:
+            case Mode.RunningDialogue:
+                statusText.text = "ENHANCE";
+                break;
+        }
+
+        int secs = (int)(t * TimeLord.GetSequenceLength());
+        timeText.text = String.Format("{0}:{1:D2}", secs / 60, secs % 60);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -129,7 +193,7 @@ public class UI : MonoBehaviour
                         }
                         else if (hit.collider == mainCamControl.activeScreen.fastForwardButton.pressCollider)
                         {
-                            playSpeed = (playSpeed == 2) ? 0 : 2;
+                            playSpeed = (playSpeed == FastMult) ? 0 : FastMult;
                             PlayPressSound();
                         }
                         else if (hit.collider == mainCamControl.activeScreen.reverseButton.pressCollider)
@@ -139,7 +203,7 @@ public class UI : MonoBehaviour
                         }
                         else if (hit.collider == mainCamControl.activeScreen.fastReverseButton.pressCollider)
                         {
-                            playSpeed = (playSpeed == -2) ? 0 : -2;
+                            playSpeed = (playSpeed == -FastMult) ? 0 : -FastMult;
                             PlayPressSound();
                         }
                         else if ((hit.collider == mainCamControl.activeScreen.scrubber.dragCollider) ||
@@ -162,10 +226,7 @@ public class UI : MonoBehaviour
                             enhanceTrigger = null;
                             var maybeThroughHit = mainCamControl.activeScreen.screenCamera.Raycast(normPoint);
                             if (maybeThroughHit is RaycastHit throughHit)
-                            {
                                 enhanceTrigger = throughHit.collider.GetComponent<TriggerData>();
-                                debugTransform.position = throughHit.point;
-                            }
                         }
                     }
                 }
@@ -186,7 +247,7 @@ public class UI : MonoBehaviour
                     EndEnhancing();
                 else
                 {
-                    enhanceTime += Time.deltaTime;
+                    enhanceTime += Time.unscaledDeltaTime;
                     if ((enhanceTime >= 0.5f) && (enhanceTrigger != null))
                     {
                         DialogueRunner.StartDialogue(enhanceTrigger);
@@ -219,5 +280,8 @@ public class UI : MonoBehaviour
 
         // Tell Dr Who what time it is
         TimeLord.SetTime(t * TimeLord.GetSequenceLength());
+
+        SetCamEnables();
+        SetText();
     }
 }
