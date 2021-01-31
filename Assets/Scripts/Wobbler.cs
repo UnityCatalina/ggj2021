@@ -38,7 +38,7 @@ public class Wobbler : MonoBehaviour
             float speed = Vector3.Magnitude(newParentPos - m_lastParentPosition) / timeDiff;
             m_lastParentPosition = newParentPos;
             m_lastParentSampleTime = time;
-            m_lastSpeed = speed;
+            m_lastSpeed = (speed + m_lastSpeed) * 0.5f;
         }
        float magnitude = Mathf.Clamp(Mathf.Abs(m_lastSpeed), m_minSpeedWobble, m_maxSpeedWobble);
 
