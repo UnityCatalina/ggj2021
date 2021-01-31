@@ -337,9 +337,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 9
-  Intro: {fileID: 0}
-  Confirm: {fileID: 0}
-  Result: {fileID: 0}
+  Intro: {fileID: 181238258}
+  Confirm: {fileID: 1869795465141415028}
+  Result: {fileID: 1869795465141415027}
   Light: {fileID: 308919513}
 --- !u!1 &264447536
 GameObject:
@@ -1159,9 +1159,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 8
-  Intro: {fileID: 0}
-  Confirm: {fileID: 0}
-  Result: {fileID: 0}
+  Intro: {fileID: 570118003}
+  Confirm: {fileID: 5011968554937930048}
+  Result: {fileID: 5011968554937930047}
   Light: {fileID: 1060436729}
 --- !u!1 &580024264
 GameObject:
@@ -2086,9 +2086,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 10
-  Intro: {fileID: 0}
-  Confirm: {fileID: 0}
-  Result: {fileID: 0}
+  Intro: {fileID: 1120489783}
+  Confirm: {fileID: 4355014261084694322}
+  Result: {fileID: 4355014261084694321}
   Light: {fileID: 973411506}
 --- !u!114 &1273573225
 MonoBehaviour:
@@ -2951,9 +2951,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 7
-  Intro: {fileID: 0}
-  Confirm: {fileID: 0}
-  Result: {fileID: 0}
+  Intro: {fileID: 1851572446}
+  Confirm: {fileID: 1276299861264654305}
+  Result: {fileID: 1276299861264654304}
   Light: {fileID: 790677401}
 --- !u!1 &1874065120
 GameObject:
