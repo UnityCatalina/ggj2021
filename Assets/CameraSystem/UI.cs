@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using TMPro;
 
 enum Mode
 {
@@ -18,6 +19,8 @@ public class UI : MonoBehaviour
     public AudioClip pressClip;
     public MainCamControl mainCamControl;
     ScreenControl[] screenControls;
+    public TextMeshProUGUI statusText;
+    public TextMeshProUGUI timeText;
 
     RenderTexture bigRt;
     int nextScreenToUpdate;
@@ -138,6 +141,31 @@ public class UI : MonoBehaviour
         mode = Mode.Normal;
     }
 
+    private void SetText()
+    {
+        switch (mode)
+        {
+            case Mode.Normal:
+                statusText.text =
+                    (playSpeed == -FastMult) ? String.Format("{0}X REVERSE", FastMult) :
+                    (playSpeed == -1) ? "1X REVERSE" :
+                    (playSpeed == 0) ? "PAUSE" :
+                    (playSpeed == 1) ? "1X" :
+                    String.Format("{0}X", FastMult);
+                break;
+            case Mode.DraggingScrubber:
+                statusText.text = "SEEK";
+                break;
+            case Mode.Enhancing:
+            case Mode.RunningDialogue:
+                statusText.text = "ENHANCE";
+                break;
+        }
+
+        int secs = (int)(t * TimeLord.GetSequenceLength());
+        timeText.text = String.Format("{0}:{1:D2}", secs / 60, secs % 60);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -254,5 +282,6 @@ public class UI : MonoBehaviour
         TimeLord.SetTime(t * TimeLord.GetSequenceLength());
 
         SetCamEnables();
+        SetText();
     }
 }
