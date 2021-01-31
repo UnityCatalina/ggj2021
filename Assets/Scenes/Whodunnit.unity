@@ -261,13 +261,14 @@ MonoBehaviour:
   m_onTrigger:
     m_dialog:
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
-      m_line: Aww its a doggy... woof woof! Did you bomb the airport buddy?
+      m_line: Wwwwwooof! Wooof! Woof?
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: Are...you trying to speak dog?
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
-      m_line: Aww its a doggy... woof woof! Did you bomb the airport buddy?
+      m_line: Why not? It makes about as much sense as accusing our four-legged friend
+        of deliberately bombing an airport.
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
-      m_line: Aww its a doggy... woof woof! Did you bomb the airport buddy?
-    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
-      m_line: Aww its a doggy... woof woof! Did you bomb the airport buddy?
+      m_line: Touche.
     m_camerasToUnlock: []
 --- !u!136 &167674782
 CapsuleCollider:
@@ -1930,7 +1931,14 @@ MonoBehaviour:
   m_onTrigger:
     m_dialog:
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
-      m_line: I am certain it was Bob! You should pick him!
+      m_line: That's the security guard, right?
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: Yup; hiding in plain sight...could be the perfect cover...
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: But why would he want to bomb his place of work?
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: I think most people have fantasized about doing exactly that at least
+        once in their life...
     m_camerasToUnlock: []
 --- !u!114 &1090969688
 MonoBehaviour:
@@ -1977,8 +1985,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_onTrigger:
     m_dialog:
-    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
-      m_line: Are you sure it was him?!
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Want to jail this subject? Click on them again to confirm.
     m_camerasToUnlock: []
 --- !u!114 &1090969691
 MonoBehaviour:
@@ -1995,12 +2003,12 @@ MonoBehaviour:
   m_onTrigger:
     m_dialog:
     - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
-      m_line: Yes, I am certain it was Bob.... take him away!
-    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
-      m_line: Wrong!
-    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
-      m_line: Poor Bob spent the rest of his life in jail as an innocent man......
-        each night before bed he wishes a curse on Dunk!
+      m_line: So, an inside job, huh? I never would have called it...
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: Well, that's why we're just assistants - only a true Detective could
+        have figured out such an insidious crime!
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: We have much to learn...
     m_camerasToUnlock: []
 --- !u!114 &1120489783
 MonoBehaviour:
@@ -2017,7 +2025,11 @@ MonoBehaviour:
   m_onTrigger:
     m_dialog:
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
-      m_line: Could she have dunnit?
+      m_line: Hey, it's the waitress from the Diner! Are we seriously saying that
+        she could have wanted to blow someone up?
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: You've never worked in the service sector, have you? It could drive
+        almost anyone to kill...
     m_camerasToUnlock: []
 --- !u!136 &1120489784
 CapsuleCollider:
@@ -2065,7 +2077,12 @@ MonoBehaviour:
   m_onTrigger:
     m_dialog:
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
-      m_line: She looks too rich to be the bomber
+      m_line: Isn't that the old lady who tripped and fell in the corridor?
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: I know; impressive acting skills. And while the security guard was
+        distracted, her trained cat escaped and delivered the lethal payload!
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: That's just about stupid enough to be plausible...
     m_camerasToUnlock: []
 --- !u!136 &1273573226
 CapsuleCollider:
@@ -2299,7 +2316,13 @@ MonoBehaviour:
   m_onTrigger:
     m_dialog:
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
-      m_line: Don't lock up the poor kitty... the internet will kill us!
+      m_line: Listen, Detective... guily or not, we can't lock up the cat.
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: What the...why on earth not?
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: I think the internet might kill us if we did.
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: Eh, I'm more of a dog person anyway.
     m_camerasToUnlock: []
 --- !u!114 &1397081731
 MonoBehaviour:
@@ -2533,7 +2556,13 @@ MonoBehaviour:
   m_onTrigger:
     m_dialog:
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
-      m_line: Is that even a real baby?! Perhap he hid the bomb in the baby.
+      m_line: Is that even a real baby?! Perhap he hid the bomb in the baby...
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: I'm not sure...how can we tell? I don't know anything about babies...
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: Careful, don't look directly into its eyes! They can steal your soul!
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: I'm sure that's not OH GODS IT'S ALL TRUE!
     m_camerasToUnlock: []
 --- !u!136 &1452058714
 CapsuleCollider:
@@ -2926,7 +2955,12 @@ MonoBehaviour:
   m_onTrigger:
     m_dialog:
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
-      m_line: That girl look so innocent... it must be her!
+      m_line: What the...what's a child doing in here?!
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: What makes you think she's a child? It could simply  be a very short
+        adult! A very short *murderous* adult...
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: I'm not even going to dignify that with a response.
     m_camerasToUnlock: []
 --- !u!136 &1851572447
 CapsuleCollider:
@@ -3290,7 +3324,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: Definitely. It's him. Look at those beady little eyes! Those are eyes
+        that have killed before...
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: It's...a teddy bear. It's not even alive. Look, it's just lying there!
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: All part of the act. We'll turn our backs for one moment and BAM! All
+        dead.
     m_camerasToUnlock: []
 --- !u!136 &2085679532
 CapsuleCollider:
@@ -3515,8 +3557,12 @@ MonoBehaviour:
     m_dialog:
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
       m_line: Understood - let's hope we've got the right one. Take her away!
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: Let's see how she likes shopping...in prison!
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
-      m_line: Understood - let's hope we've got the right one. Take her away!
+      m_line: That was terrible.
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: I know...
     m_camerasToUnlock: []
 --- !u!114 &212452116777425817
 MonoBehaviour:
@@ -3533,7 +3579,7 @@ MonoBehaviour:
   m_onTrigger:
     m_dialog:
     - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
-      m_line: Want to jail this subject? Click again to confirm.
+      m_line: Want to jail this subject? Click on them again to confirm.
     m_camerasToUnlock: []
 --- !u!114 &212452116777425818
 MonoBehaviour:
@@ -3657,7 +3703,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: Bad, bad kitty.
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: 'Probably high on catnip too. '
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: Don't do drugs, kids. Not even if you're a cat.
     m_camerasToUnlock: []
 --- !u!114 &490758584325912206
 MonoBehaviour:
@@ -3672,7 +3724,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Want to jail this subject? Click on them again to confirm and invoke
+        the wrath of the internet.
     m_camerasToUnlock: []
 --- !u!4 &560103446799908459
 Transform:
@@ -3940,7 +3995,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: Called it! The height-impaired can be terrorists too.
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: That or the Detective wants to make an example to  misbehaving little
+        girls everywhere...
     m_camerasToUnlock: []
 --- !u!114 &1276299861264654305
 MonoBehaviour:
@@ -3955,7 +4015,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Want to jail this subject? Click on them again to confirm.
     m_camerasToUnlock: []
 --- !u!4 &1283064284356332826
 Transform:
@@ -4339,7 +4401,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: So...if she's going to jail, what's going to happen to her accomplice,
+        the cat?
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: Good point; we'd better put an APB out right away before it kills again...
     m_camerasToUnlock: []
 --- !u!114 &1931424710475430514
 MonoBehaviour:
@@ -4354,7 +4421,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Want to jail this subject? Click on them again to confirm.
     m_camerasToUnlock: []
 --- !u!4 &1944855039537251685
 Transform:
@@ -4560,7 +4629,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: Wow. The dog, huh? Where do we even send terroristical animals? Is
+        there a special zoo for them?
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: Who's a murderous boy then? It's you! That's right!
     m_camerasToUnlock: []
 --- !u!114 &2638476777329657548
 MonoBehaviour:
@@ -4575,7 +4649,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Want to jail this subject? Click on them again to confirm.
     m_camerasToUnlock: []
 --- !u!33 &2672554500192778605
 MeshFilter:
@@ -5056,8 +5132,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_onTrigger:
     m_dialog:
-    - m_character: {fileID: 0}
-      m_line: 
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: Such a shame. She made really good coffee...
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: It's always the quiet ones, you know?
     m_camerasToUnlock: []
 --- !u!114 &4355014261084694322
 MonoBehaviour:
@@ -5073,8 +5151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_onTrigger:
     m_dialog:
-    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
-      m_line: 
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Want to jail this subject? Click on them again to confirm.
     m_camerasToUnlock: []
 --- !u!1 &4355014261367752981
 GameObject:
@@ -5131,7 +5209,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: Good choice, Detective. Who knows what other tech she was packing!
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: Oh, sure - she was going to blow up a supermarket with a pager next...
     m_camerasToUnlock: []
 --- !u!114 &4391373259937585569
 MonoBehaviour:
@@ -5146,7 +5228,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 0}
+      m_line: Want to jail this subject? Click on them again to confirm.
     m_camerasToUnlock: []
 --- !u!114 &4391373259937585570
 MonoBehaviour:
@@ -5161,7 +5245,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: I'm loving that cellphone - properly retro.
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: I'd say suspiciously so. Who carries  that kind of tech to an airport?
+        I reckon that's our bomber.
     m_camerasToUnlock: []
 --- !u!114 &4391373259937585571
 MonoBehaviour:
@@ -5332,7 +5421,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: There he goes...a victim of circumstance, or a foiled criminal mastermind?
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: We may never know...
     m_camerasToUnlock: []
 --- !u!114 &4673782445731274468
 MonoBehaviour:
@@ -5347,7 +5440,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Want to jail this subject? Click on them again to confirm.
     m_camerasToUnlock: []
 --- !u!114 &4673782445731274469
 MonoBehaviour:
@@ -5362,7 +5457,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: It's got to be this guy. He clearly handed that case off to that other
+        suspect at check-in.
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: Perhaps, but it could also just have been an accident. He looked pretty
+        surprised!
     m_camerasToUnlock: []
 --- !u!114 &4673782445731274470
 MonoBehaviour:
@@ -5377,9 +5478,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  Intro: {fileID: 4673782445731274469}
-  Confirm: {fileID: 4673782445731274469}
-  Result: {fileID: 4673782445731274469}
+  Intro: {fileID: 4391373259937585570}
+  Confirm: {fileID: 4391373259937585569}
+  Result: {fileID: 4391373259937585568}
   Light: {fileID: 1061820895}
 --- !u!136 &4673782445731274471
 CapsuleCollider:
@@ -5467,7 +5568,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: The old 'fake baby' trick. A well-worn classic.
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: No, I think this just proves that even parents can be killers.
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: At least they'll have each other for company during their life sentences!
     m_camerasToUnlock: []
 --- !u!114 &4916819815983562785
 MonoBehaviour:
@@ -5482,7 +5589,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Want to jail this subject? Click on them again to confirm.
     m_camerasToUnlock: []
 --- !u!4 &5029124102916729737
 Transform:
@@ -6376,8 +6485,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_onTrigger:
     m_dialog:
-    - m_character: {fileID: 0}
-      m_line: 
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: HAH! See? The Detective agrees with me! Take that you evil, furry fiend!
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: ...you're both nuts.
     m_camerasToUnlock: []
 --- !u!114 &8240377377523134584
 MonoBehaviour:
@@ -6393,8 +6504,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_onTrigger:
     m_dialog:
-    - m_character: {fileID: 0}
-      m_line: 
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Want to jail this subject? Click on them again to confirm.
     m_camerasToUnlock: []
 --- !u!33 &8242944307162244140
 MeshFilter:
