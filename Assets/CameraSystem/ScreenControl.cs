@@ -33,6 +33,7 @@ public class ScreenControl : MonoBehaviour
     public void Connect(ScreenCamera screenCam)
     {
         screenCamera = screenCam;
+        screenCam.CaptureProjMatrix(); // Grab projection matrix before setting 4:3 aspect ratio...
         SetRt(null);
         meshRend.material.SetTexture("_OverlayTex", overlayRt, UnityEngine.Rendering.RenderTextureSubElement.Color);
     }

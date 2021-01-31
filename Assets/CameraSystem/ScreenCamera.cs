@@ -14,7 +14,10 @@ public class ScreenCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Assume this doesn't change...
+    }
+
+    public void CaptureProjMatrix()
+    {
         targetProjMatrix = defaultProjMatrix = cam.projectionMatrix;
     }
 
