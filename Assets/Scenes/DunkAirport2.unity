@@ -1270,6 +1270,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 5838815046778322747, guid: 0c32805850b272946b1f4b766ac3bee9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c32805850b272946b1f4b766ac3bee9, type: 3}
 --- !u!1 &102992989
@@ -36236,6 +36241,8 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -7017691730176306700, guid: 6514553a8ac756e4f8f67e5611615253, type: 2}
     value: {fileID: 1667918436}
+  - key: {fileID: -331456083905409549, guid: 6514553a8ac756e4f8f67e5611615253, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1667918438
