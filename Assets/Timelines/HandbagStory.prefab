@@ -230,7 +230,7 @@ MonoBehaviour:
     - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
       m_line: She finds a bag under the table
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
-      m_line: Where is she taking it?
+      m_line: Where is she taking it?  I'll try and find more footage.
     m_camerasToUnlock:
     - LostAndFoundCamera
 --- !u!135 &1724781432
