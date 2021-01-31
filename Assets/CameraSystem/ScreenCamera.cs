@@ -53,7 +53,7 @@ public class ScreenCamera : MonoBehaviour
     {
         var ray = cam.ViewportPointToRay(normPoint);
         RaycastHit throughHit;
-        if (!Physics.Raycast(ray, out throughHit))
+        if (!Physics.Raycast(ray, out throughHit, 10000, LayerMask.GetMask("Trigger")))
             return null;
         return throughHit;
     }

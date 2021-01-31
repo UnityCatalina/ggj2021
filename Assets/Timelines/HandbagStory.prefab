@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1804654276}
   - component: {fileID: 1804654278}
   - component: {fileID: 1804654277}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ThiefTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 5202656054784231822}
   - component: {fileID: 3817409049289726254}
   - component: {fileID: 6755873879049597488}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: StartCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 9170760491193829798}
   - component: {fileID: 7225438891386611829}
   - component: {fileID: 7225438891386611828}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HandbagGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,6 +593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Handbag
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225438892049297432, guid: f935601fd2981b84fbbf5f24204decea,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8002398250501122722, guid: f935601fd2981b84fbbf5f24204decea,
         type: 3}
