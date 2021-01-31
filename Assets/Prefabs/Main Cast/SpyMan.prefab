@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &914933935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4785115817588340600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfab9c027629af249a474264f85511fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5283886323689578175
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +23,6 @@ GameObject:
   - component: {fileID: 7578510257043628009}
   - component: {fileID: 1433073143062744465}
   - component: {fileID: 1433073143062744464}
-  - component: {fileID: 3437797365120906754}
   m_Layer: 0
   m_Name: SpyMan
   m_TagString: Untagged
@@ -53,6 +64,10 @@ PlayableDirector:
     value: {fileID: 1433073143062744464}
   - key: {fileID: -3860322416688396428, guid: 9b399ca625fc915498f88fc54f91744e, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 220250399155586295, guid: 9b399ca625fc915498f88fc54f91744e, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5578773274026802354, guid: 9b399ca625fc915498f88fc54f91744e, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!95 &1433073143062744464
@@ -74,18 +89,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3437797365120906754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5283886323689578175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfab9c027629af249a474264f85511fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1433073143635043667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96,7 +99,7 @@ PrefabInstance:
     - target: {fileID: 2747404561423858310, guid: de5845c53a43ca84e98dc1c3dfbe3474,
         type: 3}
       propertyPath: m_Name
-      value: Suitcase
+      value: Suitcase A
       objectReference: {fileID: 0}
     - target: {fileID: 2747404561423858310, guid: de5845c53a43ca84e98dc1c3dfbe3474,
         type: 3}
@@ -229,6 +232,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4587de61b927c5a4e9bfe25dc5e0cc25, type: 3}
+--- !u!1 &4785115817588340600 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7367465708875637051, guid: 4587de61b927c5a4e9bfe25dc5e0cc25,
+    type: 3}
+  m_PrefabInstance: {fileID: 2618379725677254211}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5270326294310350274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7887403473578703745, guid: 4587de61b927c5a4e9bfe25dc5e0cc25,
