@@ -940,9 +940,6 @@ MonoBehaviour:
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
       m_line: "I think he\u2019s taking the incident personally; his team failed
         to prevent a bombing, after all! It\u2019s lucky that no-one was hurt.\r"
-    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
-      m_line: "All the more reason to figure out what the bomber\u2019s intended
-        target was, in case they try again!\r"
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
       m_line: "The chief wants this wrapped up quickly, which is why he\u2019s sent
         me to help you. Detective Dave Dooble at your service!\r"
