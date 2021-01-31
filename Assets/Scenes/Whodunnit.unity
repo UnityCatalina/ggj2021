@@ -1995,9 +1995,9 @@ MonoBehaviour:
     m_dialog:
     - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
       m_line: Yes, I am certain it was Bob.... take him away!
-    - m_character: {fileID: 0}
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
       m_line: Wrong!
-    - m_character: {fileID: 0}
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
       m_line: Poor Bob spent the rest of his life in jail as an innocent man......
         each night before bed he wishes a curse on Dunk!
     m_camerasToUnlock: []
