@@ -1155,10 +1155,11 @@ MonoBehaviour:
   m_onTrigger:
     m_dialog:
     - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
-      m_line: Alright Dunk, time to pick out the cultprit. We have a lineup of highly
-        suspicious people.
+      m_line: Alright; we've gathered all the suspects you identified from the CCTV
+        footage, as well as a couple other suspicious characters.
     - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
-      m_line: Hmm who could it possibly be?! I should choose carefully!
+      m_line: I've got my own opinions, but you're the Detective - it's time to choose
+        who we put away...
     m_camerasToUnlock: []
 --- !u!114 &580024266
 MonoBehaviour:
@@ -3511,7 +3512,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: Understood - let's hope we've got the right one. Take her away!
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: Understood - let's hope we've got the right one. Take her away!
     m_camerasToUnlock: []
 --- !u!114 &212452116777425817
 MonoBehaviour:
@@ -3526,7 +3531,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: de8a7ba1acb62c04cbd688ede27e8ca1, type: 2}
+      m_line: Want to jail this subject? Click again to confirm.
     m_camerasToUnlock: []
 --- !u!114 &212452116777425818
 MonoBehaviour:
@@ -3541,7 +3548,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: Possible; she certainly spent a lot of time loitering in Duty Free.
+        Trying to create an alibi, perhaps?
+    - m_character: {fileID: 11400000, guid: 9b08bd3028e57cf46989f72005f6c8ee, type: 2}
+      m_line: I'm not convinced; she was just shopping! That's not a crime. But,
+        well, it's your call, boss...
     m_camerasToUnlock: []
 --- !u!114 &212452116777425819
 MonoBehaviour:
@@ -5042,7 +5055,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 0}
+      m_line: 
     m_camerasToUnlock: []
 --- !u!114 &4355014261084694322
 MonoBehaviour:
@@ -5057,7 +5072,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_onTrigger:
-    m_dialog: []
+    m_dialog:
+    - m_character: {fileID: 11400000, guid: 56704998c5c69484fb0d41bdc061e4ba, type: 2}
+      m_line: 
     m_camerasToUnlock: []
 --- !u!1 &4355014261367752981
 GameObject:
