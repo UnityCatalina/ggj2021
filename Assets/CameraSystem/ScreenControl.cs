@@ -7,6 +7,7 @@ public class ScreenControl : MonoBehaviour
     RenderTexture defaultRt;
     public MeshRenderer meshRend;
     public ScreenCamera screenCamera;
+    public RenderTexture overlayRt;
 
     public BoxCollider screenCollider;
     public Scrubber scrubber;
@@ -34,6 +35,7 @@ public class ScreenControl : MonoBehaviour
     {
         screenCamera = screenCam;
         SetRt(null);
+        meshRend.material.SetTexture("_OverlayTex", overlayRt, UnityEngine.Rendering.RenderTextureSubElement.Color);
     }
 
     public void SetRt(RenderTexture overrideRt)
@@ -42,7 +44,7 @@ public class ScreenControl : MonoBehaviour
         {
             RenderTexture rt = (overrideRt == null) ? defaultRt : overrideRt;
             screenCamera.cam.targetTexture = rt;
-            meshRend.material.SetTexture("_EmissionMap", rt, UnityEngine.Rendering.RenderTextureSubElement.Color);
+            meshRend.material.SetTexture("_BaseTex", rt, UnityEngine.Rendering.RenderTextureSubElement.Color);
         }
     }
 
