@@ -34,7 +34,6 @@ public class ScreenControl : MonoBehaviour
     {
         screenCamera = screenCam;
         SetRt(null);
-        screenCam.cam.enabled = true;
     }
 
     public void SetRt(RenderTexture overrideRt)
@@ -47,13 +46,19 @@ public class ScreenControl : MonoBehaviour
         }
     }
 
+    public void SetCamEnabled(bool enabled)
+    {
+        if (screenCamera != null)
+            screenCamera.cam.enabled = enabled;
+    }
+
     public void SetState(float t, int playSpeed)
     {
         scrubber.SetState(t);
         forwardButton.SetState(playSpeed == 1);
-        fastForwardButton.SetState(playSpeed == 2);
+        fastForwardButton.SetState(playSpeed == UI.FastMult);
         reverseButton.SetState(playSpeed == -1);
-        fastReverseButton.SetState(playSpeed == -2);
+        fastReverseButton.SetState(playSpeed == -UI.FastMult);
     }
 
     public Vector3 NormalisePoint(Vector3 point)

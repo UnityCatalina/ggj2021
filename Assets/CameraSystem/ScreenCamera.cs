@@ -21,7 +21,7 @@ public class ScreenCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var t = Mathf.Pow(1.0f - interpSpeed, Time.deltaTime);
+        var t = Mathf.Pow(1.0f - interpSpeed, Time.unscaledDeltaTime);
         Matrix4x4 projMatrix = cam.projectionMatrix;
         for (int i = 0; i != 4; ++i)
             projMatrix.SetRow(i, Vector4.Lerp(
